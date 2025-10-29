@@ -13,42 +13,87 @@
   .btn, .btn-primary, a.btn, button{background:linear-gradient(to left,var(--main),var(--dark))!important;color:#fff!important;border:none!important;border-radius:12px!important;padding:.625rem 1rem!important;box-shadow:0 6px 14px rgba(82,54,99,.18)}
   .btn:hover{opacity:.95;transform:translateY(-1px)}
   header.page-header{background:linear-gradient(to left,var(--main),var(--dark));color:#fff;padding:2rem 1rem;text-align:center}
+  .stat-card{background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(17,17,17,.06);padding:18px}
+  .stat-num{font-weight:800;font-size:2rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .muted{color:#6c757d}
+  footer{background:#3f3a3f;color:#fff;text-align:center;padding:1rem;margin-top:2rem}
+  .badge{font-size:.8rem}
 </style>
 
 </head>
 <body>
 <header class="page-header">
   <h1 class="fw-bold">الإحصائيات</h1>
-  <p class="mt-1">عرض موجز لأبرز إحصاءات الإعاقة محليًا (مع تحديث مستمر للبيانات).</p>
+  <p class="mt-1">مؤشرات مختصرة من ملف الإحصاءات المعتمد.</p>
 </header>
 <main class="container my-4">
-  <div class="row g-3">
-    <div class="col-md-4">
-      <div class="p-3 bg-white rounded-3 shadow-sm">
-        <h3 class="h5">مؤشر عام</h3>
-        <p class="text-muted mb-2">وصف مختصر للمؤشر.</p>
-        <div class="display-6">—</div>
-      </div>
+  <div class="grid">
+    
+    <div class="stat-card">
+      <div class="stat-num">2,036</div>
+      <div class="muted">,966</div>
     </div>
-    <div class="col-md-4">
-      <div class="p-3 bg-white rounded-3 shadow-sm">
-        <h3 class="h5">حسب الفئة</h3>
-        <p class="text-muted mb-2">وصف مختصر للفئات.</p>
-        <div class="display-6">—</div>
-      </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">2017</div>
+      <div class="muted">مؤشر</div>
     </div>
-    <div class="col-md-4">
-      <div class="p-3 bg-white rounded-3 shadow-sm">
-        <h3 class="h5">حسب المنطقة</h3>
-        <p class="text-muted mb-2">وصف مختصر للتوزيع المناطقي.</p>
-        <div class="display-6">—</div>
-      </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">833,136</div>
+      <div class="muted">مؤشر</div>
     </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">811,610</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">289,355</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">53,282</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">30,155</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">19,428</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">7.1</div>
+      <div class="muted">نسبة ذوي الإعاقة في المملكة% أي 1,445,723 مليون شخص من عدد السكان (32,94 مليون)</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">25%</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">84216</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
+    <div class="stat-card">
+      <div class="stat-num">102853</div>
+      <div class="muted">مؤشر</div>
+    </div>
+    
   </div>
+  <p class="muted mt-3">* هذه الأرقام مستخرجة آليًا من العرض المرفق. يسعدنا تحديثها/تنسيقها حسب مصدر البيانات المعتمد لديك.</p>
 </main>
-<footer class="text-center py-3" style="background:#3f3a3f;color:#fff;">
-  © 2025 بودكاست ذوي الإعاقة — جميع الحقوق محفوظة لمبادرة تلبية
-</footer>
+<footer>© 2025 بودكاست ذوي الإعاقة — جميع الحقوق محفوظة لمبادرة تلبية</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
