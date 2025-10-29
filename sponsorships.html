@@ -1,126 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>الرعايات | بودكاست ذوي الإعاقة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-
-<style id="patch-inline-style">
-h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
-.social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
-.social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
-.inline-host-photo { width: 140px; height: auto; border-radius: 12px; margin-inline-start: 12px; vertical-align: middle;
-  border: 1px solid rgba(0,0,0,.08); background:#fff; }
-</style>
-
+  <style>
+    body{margin:0;padding:20px;font-family:system-ui,-apple-system,'Segoe UI','Cairo','Noto Sans Arabic',sans-serif;line-height:1.6;background:#fafafa;color:#111}
+    main{max-width:1100px;margin:0 auto}
+    h1{margin:0 0 8px}
+    .muted{color:#666}
+    table{width:100%;border-collapse:collapse;margin-top:14px;background:#fff;border-radius:12px;overflow:hidden}
+    th,td{border:1px solid #e9ecef;padding:10px 12px;text-align:right}
+    thead tr{background:#f1f1f1}
+    .price{font-weight:800}
+    @media (max-width:640px){th,td{font-size:.95rem}}
+  </style>
 </head>
-<body style="font-family: 'Cairo', sans-serif;">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="index (8).html">بودكاست ذوي الإعاقة</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-      aria-controls="nav" aria-expanded="false" aria-label="تبديل القائمة">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="team.html">فريق العمل</a></li>
-        <li class="nav-item"><a class="nav-link" href="partners.html">الرعاة</a></li>
-        <li class="nav-item"><a class="nav-link" href="partners-logos.html">شركاؤنا</a></li>
-        <li class="nav-item"><a class="nav-link active" href="sponsorships.html">الرعايات</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<main class="container my-5">
-  <h1 class="mb-3">خطط الرعاية</h1>
-  <p class="text-muted">الأسعار التالية محدثة ×4 مقارنةً بالنسخة السابقة، مع توضيح القيمة المضافة لكل فئة.</p>
-  <div class="row g-3">
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">البرونزية</h3>
-          <p>السابق: <strong data-old="bronze">—</strong></p>
-          <p>الحالي: <strong data-now="bronze">—</strong></p>
-          <hr>
-          <ul class="mb-0">
-            <li>ذكر الاسم نهاية حلقة شهرية</li>
-            <li>الشعار في صفحة الشركاء</li>
-            <li>شهادة شكر رقمية</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">الفضية</h3>
-          <p>السابق: <strong data-old="silver">—</strong></p>
-          <p>الحالي: <strong data-now="silver">—</strong></p>
-          <hr>
-          <ul class="mb-0">
-            <li>فوائد البرونزية +</li>
-            <li>ذكر الاسم مقدمة حلقتين</li>
-            <li>شعار أكبر لمدة شهر</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">الذهبية</h3>
-          <p>السابق: <strong data-old="gold">—</strong></p>
-          <p>الحالي: <strong data-now="gold">—</strong></p>
-          <hr>
-          <ul class="mb-0">
-            <li>فوائد الفضية +</li>
-            <li>فيديو قصير مخصص</li>
-            <li>شريك للموسم</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="h5">الماسية</h3>
-          <p>السابق: <strong data-old="platinum">—</strong></p>
-          <p>الحالي: <strong data-now="platinum">—</strong></p>
-          <hr>
-          <ul class="mb-0">
-            <li>فوائد الذهبية +</li>
-            <li>حلقة مخصصة</li>
-            <li>تسمية الموسم (حيث يُسمح)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="mt-4">
-    <a class="btn btn-dark" href="contact.html">اطلب باقة رعاية</a>
-  </div>
+<body>
+<main>
+  <h1>الرعايات</h1>
+  <p class="muted">نظام الرعاية: <strong>لكل حلقة</strong> أو <strong>سنوي</strong> (تم تحديث الأسعار إلى ×4 من السابق).</p>
+
+  <table aria-label="باقات الرعاية">
+    <thead>
+      <tr>
+        <th>الفئة</th>
+        <th>المزايا</th>
+        <th>قيمة الرعاية</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>برونزية 🟤</td>
+        <td>ذكر الرعاية في نهاية الحلقات + ظهور الشعار في الموقع.</td>
+        <td class="price">20,000 ر.س / سنويًا</td>
+      </tr>
+      <tr>
+        <td>فضية ⚪</td>
+        <td>ذكر الرعاية في بداية ونهاية الحلقات + ظهور بصري دائم + مشاركة عبر المنصات.</td>
+        <td class="price">60,000 ر.س / سنويًا</td>
+      </tr>
+      <tr>
+        <td>ذهبية 🟡</td>
+        <td>رعاية حصرية + تقرير أداء + حلقة مخصصة لجهة الراعي.</td>
+        <td class="price">120,000 ر.س / سنويًا <br>أو 32,000 ر.س / لكل حلقة</td>
+      </tr>
+    </tbody>
+  </table>
 </main>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  const oldPrices = { bronze:5000, silver:12000, gold:30000, platinum:60000 };
-  const f = n => n.toLocaleString('ar-SA');
-  for(const k in oldPrices){
-    const old = oldPrices[k], now = old*4;
-    const elOld = document.querySelector(`[data-old="${k}"]`);
-    const elNow = document.querySelector(`[data-now="${k}"]`);
-    if(elOld) elOld.textContent = `${f(old)} ر.س`;
-    if(elNow) elNow.textContent = `${f(now)} ر.س`;
-  }
-});
-</script>
-<footer class="bg-light py-4 mt-5">
-  <div class="container text-center">
-    <p class="mb-0">© بودكاست ذوي الإعاقة</p>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body></html>
+</body>
+</html>
