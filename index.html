@@ -91,14 +91,13 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 }
 </style>
 
-<style id="headings-white">h1,h2,h3,.section-title,.hero-title,header h1,header h2{color:#fff!important}</style>
 
-<style id="fix-headers-black">
-#episodes h2, #about h2, #stories h2, #resources h2, #partners h2, #contact h2,
-#episodes .section-title, #about .section-title, #stories .section-title,
-#resources .section-title, #partners .section-title, #contact .section-title {
-  color:#000 !important;
-}
+<style id="site-style">
+  :root{--main:#714984;--dark:#523663;--ink:#3f3a3f}
+  html,body,input,button,select,textarea{font-family:'Cairo',system-ui,-apple-system,'Segoe UI','Noto Sans Arabic',sans-serif!important}
+  .btn, .btn-primary, a.btn, button{background:linear-gradient(to left,var(--main),var(--dark))!important;color:#fff!important;border:none!important;border-radius:12px!important;padding:.625rem 1rem!important;box-shadow:0 6px 14px rgba(82,54,99,.18)}
+  .btn:hover{opacity:.95;transform:translateY(-1px)}
+  header.page-header{background:linear-gradient(to left,var(--main),var(--dark));color:#fff;padding:2rem 1rem;text-align:center}
 </style>
 
 </head>
@@ -115,9 +114,10 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
   <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
   <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
-  <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
+  <li class="nav-item"><a href="partners.html" class="nav-link">الرعاة</a></li>
   <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
-  <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+  <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
+<li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
 </ul>
 
     </div>
@@ -159,12 +159,6 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
       </div>
     </div>
   </section>
-<section id="about" class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
-  <p class="bg-white p-3 rounded shadow-sm">
-    بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى صوتي احترافي ونقاشات مع الجهات المعنية والخبراء.
-  </p>
-</section>
 
   <section id="stories" class="mt-5">
     <h2 class="section-title">🌟 قصص المجتمع</h2>
@@ -231,6 +225,31 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
   </section>
 
 
+<div class="text-center my-5">
+  <a href="partners.html" class="btn btn-lg" style="background-color:#bc9c5b; color:white; padding: 0.75rem 2rem; font-weight: bold;">
+    🎯 قدم طلب رعاية
+  </a>
+</div>
+
+
+<section id="about" class="my-5">
+  <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
+  <p class="bg-white p-3 rounded shadow-sm">
+    بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى صوتي احترافي ونقاشات مع الجهات المعنية والخبراء.
+  </p>
+</section>
+
+
+<section id="team-mini" class="my-5">
+  <h2 class="h4 text-[#523663] mb-3">👥 فريق البودكاست</h2>
+  <p class="bg-white p-3 rounded shadow-sm">
+    يقود البودكاست فريق متخصص يضم الأستاذة <strong>سحر العنيزي</strong><img src="assets/img/sahar.jpeg" alt="الأستاذة سحر — مقدمة البرنامج" style="width:220px;height:auto;border-radius:14px;margin-top:10px;border:1px solid rgba(0,0,0,.08);background:#fff;"> كمقدمة، وطاقمًا إداريًا وإنتاجيًا محترفًا.
+    <br>
+    <a href="team.html" class="btn btn-sm mt-2" style="background-color:#bc9c5b; color:white;">عرض الفريق بالكامل</a>
+  </p>
+</section>
+
+
 <section class="my-5">
   <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفًا أو محورًا</h2>
   <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
@@ -257,7 +276,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 </main>
 
 <footer>
-  <p>© 2025 بودكاست ذوي الإعاقة - مبادرة تلبية</p>
+  <p>© 2025 بودكاست ذوي الإعاقة - تصميم وهوية احترافية لجميع الفئات</p>
 
 <div class="d-flex justify-content-center gap-3 mt-3">
   <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
