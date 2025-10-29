@@ -1,41 +1,127 @@
-<!doctype html><html lang="ar" dir="rtl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>الرعايات | بودكاست ذوي الإعاقة</title>
-<style>
-body{margin:0;padding:20px;font-family:system-ui,-apple-system,'Segoe UI','Cairo','Noto Sans Arabic',sans-serif;line-height:1.6;background:#fafafa;color:#111}
-main{max-width:1100px;margin:0 auto}h1,h2{color:#111}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.grid{grid-template-columns:1fr}}.card{background:#fff;border:1px solid #e9ecef;border-radius:14px;padding:16px}
-.price{font-size:28px;font-weight:800}.muted{color:#666;font-size:.95rem}ul{margin:0 0 0 18px}.note{background:#fff8e1;border:1px solid #ffe082;padding:10px;border-radius:10px;margin:14px 0}
-.toggle{margin-top:10px}.toggle label{margin-inline-end:10px}
-</style></head><body><main>
-<header style="margin-bottom:10px"><h1>الرعايات</h1>
-<p class="muted">الرعاية بنظام <strong>الحلقة</strong> أو <strong>السنة</strong> — وليست بالموسم.</p>
-<div class="note">الأسعار تُحسب تلقائيًا بقيمة <strong>×4</strong> من الأسعار السابقة.</div>
-<div class="toggle"><label><input type="radio" name="mode" value="episode" checked> رعاية لكل حلقة</label>
-<label><input type="radio" name="mode" value="year"> رعاية سنوية</label></div>
-</header>
-<section class="grid">
-<article class="card"><h2>راعي استراتيجي</h2><div class="price" id="p-strategic">—</div><ul>
-<li>إبراز الشعار في جميع الحلقات/السنة</li><li>ذكر الرعاية في مقدمة وخاتمة المحتوى</li><li>مبادرات توعوية مشتركة</li></ul></article>
-<article class="card"><h2>راعي رئيسي</h2><div class="price" id="p-main">—</div><ul>
-<li>إبراز الشعار في حلقات/مواد مختارة</li><li>ذكر الرعاية داخل الحلقة</li><li>إدراج ضمن صفحة الرعاة</li></ul></article>
-<article class="card"><h2>شريك محتوى</h2><div class="price" id="p-content">—</div><ul>
-<li>تعاون في إنتاج حلقة/سلسلة محددة</li><li>وضع الشعار في الحلقة المعنية</li><li>ذكر الشراكة في صفحة الرعاة</li></ul></article>
-</section>
-<section class="note">ضع الأسعار السابقة هنا (بالريال) ليتم ضربها تلقائيًا ×4:</section>
-<pre class="note">window.OLD_PRICES = {
-  episode: { strategic: 0, main: 0, content: 0 },
-  year:    { strategic: 0, main: 0, content: 0 }
-};</pre>
-<p><a href="index.html">العودة للصفحة الرئيسية</a></p>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>الرعايات | بودكاست ذوي الإعاقة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+<style id="patch-inline-style">
+h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
+.social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
+.social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
+.inline-host-photo { width: 120px; height: auto; border-radius: 12px; margin-inline-start: 10px; vertical-align: middle;
+  border: 1px solid rgba(0,0,0,.08); background:#fff; }
+</style>
+
+</head>
+<body style="font-family: 'Cairo', sans-serif;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index (8).html">بودكاست ذوي الإعاقة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+      aria-controls="nav" aria-expanded="false" aria-label="تبديل القائمة">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="team.html">فريق العمل</a></li>
+        <li class="nav-item"><a class="nav-link" href="partners.html">الرعاة</a></li>
+        <li class="nav-item"><a class="nav-link" href="partners-logos.html">شركاؤنا</a></li>
+        <li class="nav-item"><a class="nav-link active" href="sponsorships.html">الرعايات</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container my-5">
+  <h1 class="mb-3">خطط الرعاية</h1>
+<p class="muted">خيارات الرعاية: <strong>لكل حلقة</strong> أو <strong>سنوية</strong> — الأسعار محدثة ×4.</p>
+  <p class="text-muted">الأسعار التالية محدثة ×4 مقارنةً بالنسخة السابقة، مع توضيح القيمة المضافة لكل فئة.</p>
+  <div class="row g-3">
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="h5">البرونزية</h3>
+          <p>السابق: <strong data-old="bronze">—</strong></p>
+          <p>الحالي: <strong data-now="bronze">—</strong></p>
+          <hr>
+          <ul class="mb-0">
+            <li>ذكر الاسم نهاية حلقة شهرية</li>
+            <li>الشعار في صفحة الشركاء</li>
+            <li>شهادة شكر رقمية</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="h5">الفضية</h3>
+          <p>السابق: <strong data-old="silver">—</strong></p>
+          <p>الحالي: <strong data-now="silver">—</strong></p>
+          <hr>
+          <ul class="mb-0">
+            <li>فوائد البرونزية +</li>
+            <li>ذكر الاسم مقدمة حلقتين</li>
+            <li>شعار أكبر لمدة شهر</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="h5">الذهبية</h3>
+          <p>السابق: <strong data-old="gold">—</strong></p>
+          <p>الحالي: <strong data-now="gold">—</strong></p>
+          <hr>
+          <ul class="mb-0">
+            <li>فوائد الفضية +</li>
+            <li>فيديو قصير مخصص</li>
+            <li>شريك للموسم</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h3 class="h5">الماسية</h3>
+          <p>السابق: <strong data-old="platinum">—</strong></p>
+          <p>الحالي: <strong data-now="platinum">—</strong></p>
+          <hr>
+          <ul class="mb-0">
+            <li>فوائد الذهبية +</li>
+            <li>حلقة مخصصة</li>
+            <li>تسمية الموسم (حيث يُسمح)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4">
+    <a class="btn btn-dark" href="contact.html">اطلب باقة رعاية</a>
+  </div>
 </main>
 <script>
-window.OLD_PRICES = window.OLD_PRICES || { episode:{strategic:0,main:0,content:0}, year:{strategic:0,main:0,content:0} };
-function formatSAR(n){return new Intl.NumberFormat('ar-SA',{style:'currency',currency:'SAR',maximumFractionDigits:0}).format(n);}
-function render(){var mode=document.querySelector('input[name="mode"]:checked').value;var old=window.OLD_PRICES[mode]||{strategic:0,main:0,content:0};
-var mult=4;document.getElementById('p-strategic').textContent=old.strategic?formatSAR(old.strategic*mult):'—';
-document.getElementById('p-main').textContent=old.main?formatSAR(old.main*mult):'—';
-document.getElementById('p-content').textContent=old.content?formatSAR(old.content*mult):'—';}
-document.addEventListener('change',function(e){if(e.target&&e.target.name==='mode')render();});render();
-</script></body></html>
+document.addEventListener('DOMContentLoaded', function(){
+  const oldPrices = { bronze:5000, silver:12000, gold:30000, platinum:60000 };
+  const f = n => n.toLocaleString('ar-SA');
+  for(const k in oldPrices){
+    const old = oldPrices[k], now = old*4;
+    const elOld = document.querySelector(`[data-old="${k}"]`);
+    const elNow = document.querySelector(`[data-now="${k}"]`);
+    if(elOld) elOld.textContent = `${f(old)} ر.س`;
+    if(elNow) elNow.textContent = `${f(now)} ر.س`;
+  }
+});
+</script>
+<footer class="bg-light py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-0">© بودكاست ذوي الإعاقة</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
