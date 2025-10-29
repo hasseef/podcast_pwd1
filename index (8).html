@@ -1,266 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>body { font-family: "Cairo", sans-serif; }</style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>بودكاست ذوي الإعاقة</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --main-color: #714984;
-      --dark-color: #523663;
-      --accent-color: #bc9c5b;
-      --text-color: #3f3a3f;
-      --bg-color: #f4f4f4;
-    }
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-    }
-    .navbar {
-      background-color: var(--main-color);
-    }
-    .navbar .nav-link, .navbar-brand {
-      color: #fff !important;
-    }
-    .hero {
-      background: linear-gradient(to left, var(--main-color), var(--dark-color));
-      color: white;
-      padding: 5rem 1rem;
-      text-align: center;
-    }
-    .hero img {
-      max-height: 100px;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      border-right: 5px solid var(--accent-color);
-      padding-right: 12px;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-    }
-    .feature-box, .episode-card, .testimonial, .partner-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
-    }
-    .btn-main {
-      background-color: var(--accent-color);
-      color: white;
-    }
-    footer {
-      background-color: var(--text-color);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-  </style>
-
-<style id="patch-inline-style">
-h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
-.social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
-.social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
-.inline-host-photo { width: 120px; height: auto; border-radius: 12px; margin-inline-start: 10px; vertical-align: middle;
-  border: 1px solid rgba(0,0,0,.08); background:#fff; }
-</style>
-
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg sticky-top shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
-  <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
-  <li class="nav-item"><a href="partners.html" class="nav-link">الرعاة</a></li>
-  <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
-  <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
-</ul>
-
-    </div>
-  </div>
-  
-</nav>
-
-<section class="hero">
-  <img src="logo.png" alt="شعار بودكاست" />
-  <h1 class="display-5 fw-bold">نُضيء الطريق للتكامل</h1>
-  <p class="lead">منصة إعلامية إنسانية تُعنى بجوانب حياة الأشخاص ذوي الإعاقة، تسلط الضوء على التحديات والفرص وتدعم التكامل لابتكار الحلول وتحسين جودة الحياة عبر استضافة الخبراء والجهات ذات العلاقة.</p>
-  <a href="#episodes" class="btn btn-main mt-3 px-4">ابدأ بالمشاهدة</a>
-</section>
-
-<main class="container py-5">
-
-  <section id="episodes">
-    <h2 class="section-title">🎧 الحلقات</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>التعليم الشامل</h5>
-          <p>مع د. محمد القحطاني</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
-          </div>
-          <a href="#" class="btn btn-main w-100">شاهد الآن</a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>الحقوق القانونية</h5>
-          <p>مع أ. سارة العتيبي</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample2" allowfullscreen></iframe>
-          </div>
-          <a href="#" class="btn btn-main w-100">شاهد الآن</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="stories" class="mt-5">
-    <h2 class="section-title">🌟 قصص المجتمع</h2>
-    <div class="testimonial">
-      <p>“بعد استماعي للبودكاست، بدأت أؤمن أن صوتي له مكان وقيمة.”</p>
-      <small class="text-muted">- مها، جدة</small>
-    </div>
-  </section>
-
-  <section id="resources" class="mt-5">
-    <h2 class="section-title">📚 الموارد والخدمات</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>جهات الدعم</h6>
-          <p>دليل تفاعلي لجهات حكومية وخاصة تقدم خدمات لذوي الإعاقة.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>أدوات مساعدة</h6>
-          <p>روابط أدوات رقمية مجانية لتحسين الوصول للمحتوى.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>مبادرات ملهمة</h6>
-          <p>قصص مشاريع ومجتمعات تقود التغيير.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="partners" class="mt-5">
-    <h2 class="section-title">🤝 الشراكات والرعاية</h2>
-    <div class="partner-box">
-      <p>ندعو الجهات للمساهمة في تمكين الصوت والإبداع من خلال رعاية حلقاتنا أو الدخول في شراكات مؤثرة.</p>
-      <ul>
-        <li>ذكر الراعي داخل الحلقات</li>
-        <li>ظهور الشعار في الموقع والنشرات</li>
-        <li>فرص حملات ترويجية مشتركة</li>
-      </ul>
-      <a href="#contact" class="btn btn-outline-secondary mt-2">قدّم شراكتك الآن</a>
-    </div>
-  </section>
-
-  <section id="contact" class="mt-5">
-    <h2 class="section-title">📬 تواصل معنا</h2>
-    <form class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">الاسم الكامل</label>
-        <input type="text" class="form-control" placeholder="اسمك">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">البريد الإلكتروني</label>
-        <input type="email" class="form-control" placeholder="example@email.com">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">رسالتك</label>
-        <textarea class="form-control" rows="4" placeholder="أخبرنا كيف يمكننا خدمتك أو التعاون معك"></textarea>
-      </div>
-      <button class="btn btn-main w-100">إرسال</button>
-    </form>
-  </section>
-
-
-<div class="text-center my-5">
-  <a href="partners.html" class="btn btn-lg" style="background-color:#bc9c5b; color:white; padding: 0.75rem 2rem; font-weight: bold;">
-    🎯 قدم طلب رعاية
-  </a>
-</div>
-
-
-<section id="about" class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
-  <p class="bg-white p-3 rounded shadow-sm">
-    بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى صوتي احترافي ونقاشات مع الجهات المعنية والخبراء.
-  </p>
-</section>
-
-
-<section id="team-mini" class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">👥 فريق البودكاست</h2>
-  <p class="bg-white p-3 rounded shadow-sm">
-    يقود البودكاست فريق متخصص يضم الأستاذة <strong>سحر العنيزي</strong><img src="assets/img/sahar.jpeg" alt="الأستاذة سحر — مقدمة البرنامج" class="inline-host-photo"> كمقدمة، وطاقمًا إداريًا وإنتاجيًا محترفًا.
-    <br>
-    <a href="team.html" class="btn btn-sm mt-2" style="background-color:#bc9c5b; color:white;">عرض الفريق بالكامل</a>
-  </p>
-</section>
-
-
-<section class="my-5">
-  <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفًا أو محورًا</h2>
-  <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
-    <div class="mb-3">
-      <label class="form-label">اسمك الكامل</label>
-      <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">اسم الضيف المقترح (اختياري)</label>
-      <input type="text" class="form-control" placeholder="مثال: د. عبدالله القحطاني">
-    </div>
-    <div class="mb-3">
-      <label class="form-label">محور أو موضوع تقترحه</label>
-      <textarea class="form-control" rows="3" placeholder="مثل: التوظيف، التعليم، سهولة الوصول..." required></textarea>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">البريد الإلكتروني (اختياري)</label>
-      <input type="email" class="form-control" placeholder="example@email.com">
-    </div>
-    <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
-  </form>
-</section>
-
-</main>
-
-<footer>
-  <p>© 2025 بودكاست ذوي الإعاقة - تصميم وهوية احترافية لجميع الفئات</p>
-
-<div class="d-flex justify-content-center gap-3 mt-3">
-  <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
-    <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
-  </a>
-  <a href="https://www.tiktok.com/@podcastpwd?_t=ZS-90sKbbuycTo&_r=1" target="_blank" title="TikTok">
-    <img src="https://cdn-icons-png.flaticon.com/24/3046/3046121.png" alt="TikTok">
-  </a>
-  <a href="https://x.com/podcastpwd?s=11&t=dWAyG2J-XOKhx8AE0ie55A" target="_blank" title="X">
-    <img src="https://cdn-icons-png.flaticon.com/24/5968/5968830.png" alt="X">
-  </a>
-</div>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
