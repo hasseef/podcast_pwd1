@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>حلقة التعليم الشامل | بودكاست ذوي الإعاقة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #714984;
+      --dark-color: #523663;
+      --accent-color: #bc9c5b;
+      --text-color: #3f3a3f;
+      --bg-color: #f9f9f9;
+    }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f4f4f4;
+      color: var(--text-color);
+    }
+    header {
+      background: linear-gradient(to left, #714984, #523663);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    .episode-player {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .btn-main {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    footer {
+      background: var(--text-color);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+  
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎙️ التعليم الشامل</h1>
+  <p>مع د. محمد القحطاني</p>
+</header>
+
+<main class="container my-5">
+  <div class="episode-player">
+    <h4>ملخص الحلقة</h4>
+    <p>
+      نتحدث في هذه الحلقة عن التحديات التي يواجهها الطلاب ذوو الإعاقة في بيئات التعليم، 
+      وكيف يمكن تصميم مناهج وسياسات أكثر شمولًا. يناقش الضيف د. محمد القحطاني 
+      تجاربه كخبير في التربية الخاصة ويقدم رؤى عملية للمستمعين.
+    </p>
+
+    <div class="ratio ratio-16x9 my-4">
+      <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <a href="#" class="btn btn-outline-secondary">🎧 استمع على Apple</a>
+      <a href="#" class="btn btn-outline-secondary">🎧 استمع على Spotify</a>
+      <a href="#" class="btn btn-outline-secondary">🧏‍♀️ نسخة بلغة الإشارة</a>
+    </div>
+
+    <div class="mt-4">
+      <h6>شارك الحلقة:</h6>
+      <a href="#" class="btn btn-sm btn-outline-primary">🔗 رابط مباشر</a>
+      <a href="#" class="btn btn-sm btn-outline-primary">🔄 مشاركة على تويتر</a>
+      <a href="#" class="btn btn-sm btn-outline-primary">📘 مشاركة على فيسبوك</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 بودكاست ذوي الإعاقة</p>
+</footer>
+
+</body>
+</html>
