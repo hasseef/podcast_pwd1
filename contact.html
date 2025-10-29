@@ -77,6 +77,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 
 <style id="headings-white">h1,h2,h3,.section-title,.hero-title,header h1,header h2{color:#fff!important}</style>
 <style id="contact-headings-white">header h1, header h2, .hero h1, .hero h2{color:#fff!important}</style>
+<style id="contact-color-fix">header, header h1, header p{color:#fff!important} main h2{color:#000!important}</style>
 </head>
 <body>
 
@@ -99,6 +100,10 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
       <div class="mb-3">
         <label class="form-label">البريد الإلكتروني</label>
         <input type="email" class="form-control" placeholder="example@email.com" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">الهاتف (اختياري)</label>
+        <input type="tel" class="form-control" placeholder="+966 5x xxx xxxx" pattern="\+?\d[\d\s\-]{6,}">
       </div>
       <div class="mb-3">
         <label class="form-label">الرسالة / الغرض من التواصل</label>
