@@ -71,12 +71,9 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 </style>
 
 
-<style id="fix-colors">
-  h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color: #fff !important; }
-  footer i, footer .fa, footer .fab, footer .icon, .social i, .social svg { color: #d4af37 !important; }
-  footer svg, .social svg { fill: #d4af37 !important; }
-  footer a img.social, .social a img {
-    filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important;
+<style id="unified-font">
+  html, body, input, button, select, textarea {
+    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', sans-serif !important;
   }
 </style>
 
@@ -94,11 +91,6 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 }
 </style>
 
-
-<style id="home-headings-black">
-h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !important; }
-</style>
-
 </head>
 <body>
 
@@ -113,7 +105,7 @@ h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !impo
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
   <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
   <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
-  <li class="nav-item"><a href="sponsorships.html" class="nav-link">الرعاة</a></li>
+  <li class="nav-item"><a href="partners.html" class="nav-link">الرعاة</a></li>
   <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
   <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
 </ul>
@@ -125,7 +117,7 @@ h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !impo
 
 <section class="hero">
   <img src="logo.png" alt="شعار بودكاست" />
-  <h1 class="display-5 fw-bold">نُضيء الطريق للتكامل</h1>
+  <h1 class="display-5 fw-bold"><span style="color:#fff;">نُضيء الطريق للتكامل</span></h1>
   <p class="lead">منصة إعلامية إنسانية تُعنى بجوانب حياة الأشخاص ذوي الإعاقة، تسلط الضوء على التحديات والفرص وتدعم التكامل لابتكار الحلول وتحسين جودة الحياة عبر استضافة الخبراء والجهات ذات العلاقة.</p>
   <a href="#episodes" class="btn btn-main mt-3 px-4">ابدأ بالمشاهدة</a>
 </section>
@@ -192,7 +184,6 @@ h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !impo
 
   <section id="partners" class="mt-5">
     <h2 class="section-title">🤝 الشراكات والرعاية</h2>
-<p><a href="sponsorships.html" class="btn btn-primary" style="display:inline-block;padding:10px 16px;border-radius:10px;background:#7c4dff;color:#fff;text-decoration:none">تفاصيل الرعايات</a></p>
     <div class="partner-box">
       <p>ندعو الجهات للمساهمة في تمكين الصوت والإبداع من خلال رعاية حلقاتنا أو الدخول في شراكات مؤثرة.</p>
       <ul>
@@ -225,7 +216,7 @@ h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !impo
 
 
 <div class="text-center my-5">
-  <a href="sponsorships.html" class="btn btn-lg" style="background-color:#bc9c5b; color:white; padding: 0.75rem 2rem; font-weight: bold;">
+  <a href="partners.html" class="btn btn-lg" style="background-color:#bc9c5b; color:white; padding: 0.75rem 2rem; font-weight: bold;">
     🎯 قدم طلب رعاية
   </a>
 </div>
@@ -242,7 +233,7 @@ h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !impo
 <section id="team-mini" class="my-5">
   <h2 class="h4 text-[#523663] mb-3">👥 فريق البودكاست</h2>
   <p class="bg-white p-3 rounded shadow-sm">
-    يقود البودكاست فريق متخصص يضم الأستاذة <strong>سحر العنيزي</strong> كمقدمة، وطاقمًا إداريًا وإنتاجيًا محترفًا.
+    يقود البودكاست فريق متخصص يضم الأستاذة <strong>سحر العنيزي</strong><img src="assets/img/sahar.jpeg" alt="الأستاذة سحر — مقدمة البرنامج" style="width:220px;height:auto;border-radius:14px;margin-top:10px;border:1px solid rgba(0,0,0,.08);background:#fff;"> كمقدمة، وطاقمًا إداريًا وإنتاجيًا محترفًا.
     <br>
     <a href="team.html" class="btn btn-sm mt-2" style="background-color:#bc9c5b; color:white;">عرض الفريق بالكامل</a>
   </p>
@@ -275,7 +266,7 @@ h1, h2, h3, .section-title, .hero-title, header h1, header h2 { color:#111 !impo
 </main>
 
 <footer>
-  <p>© 2025 بودكاست ذوي الإعاقة — جميع الحقوق محفوظة لمبادرة تلبية</p>
+  <p>© 2025 بودكاست ذوي الإعاقة - تصميم وهوية احترافية لجميع الفئات</p>
 
 <div class="d-flex justify-content-center gap-3 mt-3">
   <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
