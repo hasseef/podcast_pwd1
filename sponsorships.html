@@ -15,6 +15,20 @@
     .price{font-weight:800}
     footer{background:#3f3a3f;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem}
   </style>
+
+<style id="brand-buttons">
+:root{--main:#714984;--dark:#523663}
+.btn, .btn-primary, .btn-lg, .btn-sm, a.btn, button {
+  background: linear-gradient(to left,var(--main),var(--dark)) !important;
+  color:#fff !important; border:none !important; 
+  border-radius:12px !important; padding:.625rem 1rem !important;
+  box-shadow: 0 6px 14px rgba(82,54,99,.18);
+}
+.btn:hover, .btn-primary:hover, a.btn:hover, button:hover{
+  opacity:.95; transform: translateY(-1px);
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -27,24 +41,78 @@
       <thead>
         <tr><th>الفئة</th><th>المزايا</th><th>قيمة الرعاية</th></tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>برونزية 🟤</td>
-          <td>ذكر الراعي في نهاية الحلقات + شعار في الموقع.</td>
-          <td class="price">20,000 ر.س / سنويًا</td>
-        </tr>
-        <tr>
-          <td>فضية ⚪</td>
-          <td>ذكر في بداية ونهاية الحلقات + ظهور بصري دائم + مشاركة عبر المنصات.</td>
-          <td class="price">60,000 ر.س / سنويًا</td>
-        </tr>
-        <tr>
-          <td>ذهبية 🟡</td>
-          <td>رعاية حصرية + تقرير أداء + حلقة مخصصة للجهة الراعية.</td>
-          <td class="price">120,000 ر.س / سنويًا <br>أو 32,000 ر.س / لكل حلقة</td>
-        </tr>
-      </tbody>
+      
+<tbody>
+  <tr>
+    <td><strong>ذهبية 🟡</strong></td>
+    <td>ذكر افتتاحي/ختامي + ظهور بارز بالفيديو والصور المصغّرة + <span class="badge text-bg-warning">قطعة محتوى مخصصة</span> + تقرير أداء ربع سنوي.</td>
+    <td class="price">700,000 ر.س / سنويًا <br>أو 50,000 ر.س / لكل حلقة</td>
+  </tr>
+  <tr>
+    <td><strong>فضية ⚪</strong></td>
+    <td>ذكر افتتاحي/ختامي مختصر + شعار بالموقع ومواد النشر + منشور/حملة اجتماعية فصليًا.</td>
+    <td class="price">300,000 ر.س / سنويًا <br>أو 35,000 ر.س / لكل حلقة</td>
+  </tr>
+  <tr>
+    <td><strong>برونزية 🟤</strong></td>
+    <td>ذكر ختامي + شعار في الموقع + رابط في وصف الحلقة.</td>
+    <td class="price">120,000 ر.س / سنويًا <br>أو 30,000 ر.س / لكل حلقة</td>
+  </tr>
+</tbody>
+
     </table>
+
+<section id="sponsorship-request" class="mt-4">
+  <h2 class="h4">نموذج طلب الرعاية</h2>
+  <form method="post" action="mailto:partnerships@talabiya.sa" enctype="text/plain" class="row g-3" aria-label="نموذج طلب الرعاية">
+    <div class="col-md-6">
+      <label class="form-label">اسم الجهة / الشركة<span class="text-danger">*</span></label>
+      <input type="text" name="company" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">اسم المسؤول<span class="text-danger">*</span></label>
+      <input type="text" name="contact_person" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">البريد الإلكتروني<span class="text-danger">*</span></label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">رقم الجوال<span class="text-danger">*</span></label>
+      <input type="tel" name="phone" pattern="^[0-9+\-\s]{8,20}$" class="form-control" required placeholder="+9665xxxxxxxx">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">فئة الرعاية<span class="text-danger">*</span></label>
+      <select name="tier" class="form-select" required>
+        <option value="">اختر الفئة</option>
+        <option>ذهبية — 700,000 ر.س / سنويًا — أو 50,000 ر.س / لكل حلقة</option>
+        <option>فضية — 300,000 ر.س / سنويًا — أو 35,000 ر.س / لكل حلقة</option>
+        <option>برونزية — 120,000 ر.س / سنويًا — أو 30,000 ر.س / لكل حلقة</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">نوع الرعاية<span class="text-danger">*</span></label>
+      <select name="cadence" class="form-select" required>
+        <option value="">اختر النوع</option>
+        <option>سنوية</option>
+        <option>لكل حلقة</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <label class="form-label">ملاحظات / أهداف الحملة</label>
+      <textarea name="notes" class="form-control" rows="4" placeholder="اكتب أي تفاصيل تفيد الفريق"></textarea>
+    </div>
+    <div class="col-12 form-check ms-2">
+      <input class="form-check-input" type="checkbox" value="yes" id="agree" required>
+      <label class="form-check-label" for="agree">أوافق على التواصل عبر البريد أو الجوال لاستكمال الإجراءات.</label>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+    </div>
+  </form>
+  <p class="text-muted mt-2">* في حال عدم فتح برنامج البريد تلقائيًا، يمكنكم مراسلتنا مباشرة على: partnerships@talabiya.sa</p>
+</section>
+
   </div>
 </main>
 <footer>
