@@ -25,7 +25,8 @@
     .table-wrap{background:#fff;border-radius:16px;box-shadow:0 8px 22px rgba(17,17,17,.06);padding:10px}
     .table thead th{position:sticky; top:0; background:#f7f4fb; color:#111; font-weight:700}
     .table>:not(caption)>*>*{vertical-align:middle}
-    .badge-key{background:#f7f4fb;color:#523663;border:1px dashed rgba(82,54,99,.3)}
+    .chart-card{background:#fff;border-radius:16px;box-shadow:0 8px 22px rgba(17,17,17,.06);padding:14px}
+    .chart-title{font-weight:700;margin-bottom:.25rem}
     footer{background:#3f3a3f;color:#fff;text-align:center;padding:1rem;margin-top:2rem}
   </style>
 </head>
@@ -33,7 +34,7 @@
 
 <header class="page-header">
   <h1 class="fw-bold">الإحصائيات</h1>
-  <p class="mt-1">عرض مُلخّص لبيانات الجدول المعتمد، بتصميم واضح ومهيأ للجوال.</p>
+  <p class="mt-1">عرض مُلخّص لبيانات الجدول المعتمد، مع مخططات بيانية تتحدّث تلقائيًا من الجداول.</p>
 </header>
 
 <main class="container my-4">
@@ -45,7 +46,25 @@
       <div class="value">2,036,966</div>
     </div>
     <div class="note mt-2 small">
-      المصدر: هيئة الإحصاءات العامة — مسح الإعاقة (آخر نسخة معتمدة في الملف).
+      المصدر: هيئة الإحصاءات العامة — مسح الإعاقة (آخر نسخة معتمدة لديك).
+    </div>
+  </section>
+
+  <!-- صف المخططات -->
+  <section class="row g-3 mb-4">
+    <div class="col-12 col-lg-5">
+      <div class="chart-card">
+        <div class="chart-title">توزيع حسب النوع الاجتماعي</div>
+        <canvas id="genderChart" height="200" aria-label="مخطط النوع الاجتماعي" role="img"></canvas>
+        <div id="genderChartHint" class="small text-muted mt-2" style="display:none">* املأ أعداد الذكور والإناث في جدول "حسب النوع الاجتماعي" لتظهر البيانات هنا.</div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-7">
+      <div class="chart-card">
+        <div class="chart-title">توزيع حسب فئات الإعاقة</div>
+        <canvas id="catChart" height="200" aria-label="مخطط الفئات" role="img"></canvas>
+        <div id="catChartHint" class="small text-muted mt-2" style="display:none">* املأ أعداد الفئات في جدول "حسب فئات الإعاقة" لتظهر البيانات هنا.</div>
+      </div>
     </div>
   </section>
 
@@ -54,30 +73,27 @@
     <h2 class="section-title">حسب فئات الإعاقة</h2>
     <div class="table-wrap">
       <div class="table-responsive">
-        <table class="table table-sm table-hover align-middle mb-0">
+        <!-- أدخل الأرقام مكان الشرطات — وسيتحدث مخطط الفئات تلقائيًا -->
+        <table class="table table-sm table-hover align-middle mb-0" id="tblCats">
           <thead>
             <tr>
               <th>الفئة</th>
               <th class="text-center">ذكور</th>
               <th class="text-center">إناث</th>
               <th class="text-center">الإجمالي</th>
-              <th class="text-center">ملاحظات</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>الحركية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
-            <tr><td>السمعية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
-            <tr><td>البصرية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
-            <tr><td>الذهنية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
-            <tr><td>النطق/التواصل</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
-            <tr><td>طيف التوحد</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
-            <tr><td>متعددة</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center"></td></tr>
+            <tr><td>الحركية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>السمعية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>البصرية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>الذهنية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>النطق/التواصل</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>طيف التوحد</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>متعددة</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
           </tbody>
         </table>
       </div>
-    </div>
-    <div class="small text-muted mt-2">
-      * تُستكمل الأرقام من جدول الفئات في ملف الاحصائيات.
     </div>
   </section>
 
@@ -86,7 +102,7 @@
     <h2 class="section-title">حسب المناطق الإدارية</h2>
     <div class="table-wrap">
       <div class="table-responsive">
-        <table class="table table-sm table-hover align-middle mb-0">
+        <table class="table table-sm table-hover align-middle mb-0" id="tblRegions">
           <thead>
             <tr>
               <th>المنطقة</th>
@@ -120,11 +136,12 @@
     <h2 class="section-title">حسب النوع الاجتماعي</h2>
     <div class="table-wrap">
       <div class="table-responsive">
-        <table class="table table-sm table-hover align-middle mb-0">
+        <!-- أدخل رقمين هنا وسيُحدّث مخطط النوع الاجتماعي تلقائيًا -->
+        <table class="table table-sm table-hover align-middle mb-0" id="tblGender">
           <thead>
             <tr>
               <th>الفئة</th>
-              <th class="text-center">النسبة/العدد</th>
+              <th class="text-center">العدد</th>
               <th class="text-center">ملاحظات</th>
             </tr>
           </thead>
@@ -142,7 +159,7 @@
     <h2 class="section-title">حسب الفئات العمرية</h2>
     <div class="table-wrap">
       <div class="table-responsive">
-        <table class="table table-sm table-hover align-middle mb-0">
+        <table class="table table-sm table-hover align-middle mb-0" id="tblAge">
           <thead>
             <tr>
               <th>الفئة العمرية</th>
@@ -163,12 +180,74 @@
   </section>
 
   <div class="note mt-3 small">
-    * تم بناء الجداول وفق تبويب الملف المرفق (فئات، مناطق، النوع الاجتماعي، العمر). زوّدني بالأرقام التفصيلية المعتمدة وسأعبئها مباشرة.
+    * املأ خلايا الجداول بالأرقام من ملف الإحصائيات المعتمد — ستتحدث المخططات تلقائيًا.
   </div>
 
 </main>
 
 <footer>© 2025 بودكاست ذوي الإعاقة — جميع الحقوق محفوظة لمبادرة تلبية</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+  // Helper: read number from cell text (ignore non-digits)
+  function parseNum(txt){
+    if(!txt) return NaN;
+    const m = (txt+'').replace(/[^\d\.]/g,'');
+    return m ? Number(m) : NaN;
+  }
+
+  // GENDER CHART (doughnut)
+  (function(){
+    const tbl = document.getElementById('tblGender');
+    const rows = Array.from(tbl.querySelectorAll('tbody tr'));
+    let males = NaN, females = NaN;
+    rows.forEach(r=>{
+      const label = r.cells[0].textContent.trim();
+      const val = parseNum(r.cells[1].textContent.trim());
+      if(/ذكور/.test(label)) males = val;
+      if(/إناث/.test(label)) females = val;
+    });
+    const hint = document.getElementById('genderChartHint');
+    const ctx = document.getElementById('genderChart').getContext('2d');
+    if(isNaN(males) || isNaN(females)){
+      hint.style.display = 'block';
+    } else {
+      new Chart(ctx,{
+        type:'doughnut',
+        data:{ labels:['ذكور','إناث'], datasets:[{ data:[males,females] }]},
+        options:{
+          plugins:{ legend:{ position:'bottom' } }
+        }
+      });
+    }
+  })();
+
+  // CATEGORY CHART (bar) — reads "الإجمالي" لكل فئة
+  (function(){
+    const tbl = document.getElementById('tblCats');
+    const rows = Array.from(tbl.querySelectorAll('tbody tr'));
+    const labels = [], values = [];
+    rows.forEach(r=>{
+      const label = r.cells[0].textContent.trim();
+      const total = parseNum(r.cells[3].textContent.trim()); // إجمالي
+      if(!isNaN(total)){ labels.push(label); values.push(total); }
+    });
+    const hint = document.getElementById('catChartHint');
+    const ctx = document.getElementById('catChart').getContext('2d');
+    if(!values.length){
+      hint.style.display = 'block';
+    } else {
+      new Chart(ctx,{
+        type:'bar',
+        data:{ labels, datasets:[{ label:'إجمالي', data:values }]},
+        options:{
+          scales:{ y:{ beginAtZero:true }},
+          plugins:{ legend:{ display:false } }
+        }
+      });
+    }
+  })();
+</script>
 </body>
 </html>
