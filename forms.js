@@ -1,5 +1,5 @@
 
-/*! forms.js - PodcastPWD AJAX forms (v3: REQUIRED validation + redirect) */
+/*! forms.js - PodcastPWD AJAX forms (v3 REQUIRED + robust redirect) */
 const ENDPOINT_URL = "PASTE_YOUR_DEPLOYED_APPS_SCRIPT_URL_HERE"; // ضع رابط Web App هنا
 
 function showToast(msg, isError=false){
@@ -16,7 +16,7 @@ function showToast(msg, isError=false){
   setTimeout(()=>{ t.style.display='none'; }, 2800);
 }
 
-/* Add/normalize basic constraints where missing */
+/* Required-only constraints */
 function normalizeConstraints(form){
   const nameFields = form.querySelectorAll('[name="name"],[name="fullname"]');
   nameFields.forEach(el=> el.setAttribute('required',''));
@@ -30,7 +30,6 @@ function normalizeConstraints(form){
   const phoneFields = form.querySelectorAll('input[name="phone"],input[name="mobile"],input[type="tel"]');
   phoneFields.forEach(el=>{
     el.setAttribute('type','tel');
-    // يسمح بأرقام ومسافات وعلامات - مع + اختيارية في البداية وطول إجمالي ≥ 7
     el.setAttribute('pattern','\\+?\\d[\\d\\s\\-]{6,}');
   });
 
@@ -38,27 +37,29 @@ function normalizeConstraints(form){
   messageFields.forEach(el=> el.setAttribute('required',''));
 }
 
-/* Validate using HTML5 validity + extra checks if needed */
 function validateForm(form){
   normalizeConstraints(form);
-  // Built-in check
   if(!form.checkValidity()){
-    // Highlight and show native messages
     form.reportValidity();
     showToast("رجاءً أكمل الحقول المطلوبة بصيغة صحيحة.", true);
     return false;
   }
-  // Optional extra: simple email sanity check
   const email = form.querySelector('[name="email"]');
   if(email && email.value){
     const ok = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value);
-    if(!ok){
-      email.focus();
-      showToast("صيغة البريد الإلكتروني غير صحيحة.", true);
-      return false;
-    }
+    if(!ok){ email.focus(); showToast("صيغة البريد الإلكتروني غير صحيحة.", true); return false; }
   }
   return true;
+}
+
+function getThankYouUrl(){
+  // يحسب المسار الصحيح حتى داخل مسار فرعي مثل /podcast_pwd1/
+  const {origin, pathname} = window.location;
+  const parts = pathname.split('/').filter(Boolean);
+  // احذف اسم الصفحة الحالية
+  parts.pop();
+  const base = '/' + parts.join('/') + '/';
+  return origin + base + 'thankyou.html';
 }
 
 async function submitAjaxForm(ev){
@@ -79,7 +80,6 @@ async function submitAjaxForm(ev){
     return;
   }
 
-  // Disable submit button while sending
   const btn = form.querySelector('button[type="submit"], input[type="submit"]');
   const originalText = btn ? (btn.innerText || btn.value) : null;
   if(btn){ btn.disabled = true; if(btn.innerText){ btn.innerText = "جارٍ الإرسال…"; } else if(btn.value){ btn.value = "جارٍ الإرسال…"; } }
@@ -90,10 +90,14 @@ async function submitAjaxForm(ev){
     fd.append("_timestamp", new Date().toISOString());
 
     await fetch(ENDPOINT_URL, { method:"POST", mode:"no-cors", body: fd });
-    // Success (optimistic no-cors)
+
     showToast("تم استلام النموذج بنجاح. شكرًا لك!");
     form.reset();
-    setTimeout(()=>{ window.location.href = "thankyou.html"; }, 900);
+
+    // ✅ تحويل صريح بدون أي علامة استفهام أو معاملات
+    const ty = getThankYouUrl();
+    setTimeout(()=>{ window.location.replace(ty); }, 900);
+
   }catch(err){
     console.error(err);
     showToast("تعذّر الإرسال، حاول لاحقًا.", true);
@@ -108,11 +112,9 @@ async function submitAjaxForm(ev){
 }
 
 function attachAjaxToForms(){
-  // التفعيل لكل النماذج حتى لو نُسيَت class="js-ajax-form"
   document.querySelectorAll('form').forEach(f=>{
     if(!f.classList.contains('js-ajax-form')) f.classList.add('js-ajax-form');
     f.addEventListener('submit', submitAjaxForm);
   });
 }
-
 document.addEventListener('DOMContentLoaded', attachAjaxToForms);
