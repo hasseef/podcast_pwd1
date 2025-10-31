@@ -6,1342 +6,371 @@
   <title>الإحصائيات | بودكاست ذوي الإعاقة</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-<style id="site-style">
-  :root{--main:#714984;--dark:#523663;--ink:#3f3a3f}
-  html,body,input,button,select,textarea{font-family:'Cairo',system-ui,-apple-system,'Segoe UI','Noto Sans Arabic',sans-serif!important}
-  .btn, .btn-primary, a.btn, button{background:linear-gradient(to left,var(--main),var(--dark))!important;color:#fff!important;border:none!important;border-radius:12px!important;padding:.625rem 1rem!important;box-shadow:0 6px 14px rgba(82,54,99,.18)}
-  .btn:hover{opacity:.95;transform:translateY(-1px)}
-  header.page-header{background:linear-gradient(to left,var(--main),var(--dark));color:#fff;padding:2rem 1rem;text-align:center}
-  .stat-card{background:#fff;border-radius:14px;box-shadow:0 8px 22px rgba(17,17,17,.06);padding:18px}
-  .stat-num{font-weight:800;font-size:1.9rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-  .muted{color:#6c757d}
-  footer{background:#3f3a3f;color:#fff;text-align:center;padding:1rem;margin-top:2rem}
-  .badge{font-size:.8rem}
-</style>
-
+  <style>
+    :root{--main:#714984;--dark:#523663;--ink:#3f3a3f;--gold:#bc9c5b}
+    html,body,input,button,select,textarea{
+      font-family:'Cairo',system-ui,-apple-system,'Segoe UI','Noto Sans Arabic',sans-serif!important;color:var(--ink)
+    }
+    header.page-header{
+      background:linear-gradient(to left,var(--main),var(--dark));color:#fff;padding:2rem 1rem;text-align:center
+    }
+    .metric{
+      background:#fff;border:0; border-radius:16px; box-shadow:0 10px 26px rgba(0,0,0,.08);
+      padding:18px 16px; display:flex; align-items:center; justify-content:space-between
+    }
+    .metric .value{font-size:2rem; font-weight:800; color:#111}
+    .metric .label{color:#6c757d}
+    .note{background:#faf7ff;border:1px dashed rgba(82,54,99,.25);border-radius:12px;padding:10px 14px;color:#523663}
+    .section-title{font-weight:800;margin:12px 0 12px;color:#111}
+    .table-wrap{background:#fff;border-radius:16px;box-shadow:0 8px 22px rgba(17,17,17,.06);padding:10px}
+    .table thead th{position:sticky; top:0; background:#f7f4fb; color:#111; font-weight:700}
+    .table>:not(caption)>*>*{vertical-align:middle}
+    .chart-card{background:#fff;border-radius:16px;box-shadow:0 8px 22px rgba(17,17,17,.06);padding:14px}
+    .chart-title{font-weight:700;margin-bottom:.25rem}
+    footer{background:#3f3a3f;color:#fff;text-align:center;padding:1rem;margin-top:2rem}
+  </style>
 </head>
 <body>
+
 <header class="page-header">
   <h1 class="fw-bold">الإحصائيات</h1>
-  <p class="mt-1">تم ترتيب المؤشرات حسب المحاور: الفئات، المناطق، العمر، النوع الاجتماعي، والعام.</p>
+  <p class="mt-1">بعض احصائيات ذوي الاعاقة في المملكة العربية السعودية.</p>
 </header>
+
 <main class="container my-4">
-  <ul class="nav nav-pills justify-content-center gap-2" id="stats-tabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" id="categories-tab" data-bs-toggle="tab" data-bs-target="#categories" type="button" role="tab">الفئات</button></li><li class="nav-item"><button class="nav-link " id="regions-tab" data-bs-toggle="tab" data-bs-target="#regions" type="button" role="tab">المناطق</button></li><li class="nav-item"><button class="nav-link " id="age-tab" data-bs-toggle="tab" data-bs-target="#age" type="button" role="tab">العمر</button></li><li class="nav-item"><button class="nav-link " id="gender-tab" data-bs-toggle="tab" data-bs-target="#gender" type="button" role="tab">النوع الاجتماعي</button></li><li class="nav-item"><button class="nav-link " id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">عام</button></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="categories" role="tabpanel"><div class="grid mt-3">
-        <div class="stat-card">
-          <div class="stat-num">7.1</div>
-          <div class="muted">نسبة ذوي الإعاقة في المملكة% أي 1,445,723 مليون شخص من عدد السكان (32,94 مليون)</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2017</div>
-          <div class="muted">المصدر: هيئة الإحصاءات العامة مسح الإعاقة</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">20 %</div>
-          <div class="muted">من عدد الأشخاص ذوى الإعاقة السعوديون</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">28 %</div>
-          <div class="muted">من عدد الأشخاص ذوى الإعاقة السعوديون</div>
-        </div>
-        </div></div><div class="tab-pane fade " id="regions" role="tabpanel"><div class="grid mt-3">
-        <div class="stat-card">
-          <div class="stat-num">—</div>
-          <div class="muted">لا توجد بيانات ضمن هذا المحور حاليًا</div>
-        </div>
-        </div></div><div class="tab-pane fade " id="age" role="tabpanel"><div class="grid mt-3">
-        <div class="stat-card">
-          <div class="stat-num">—</div>
-          <div class="muted">لا توجد بيانات ضمن هذا المحور حاليًا</div>
-        </div>
-        </div></div><div class="tab-pane fade " id="gender" role="tabpanel"><div class="grid mt-3">
-        <div class="stat-card">
-          <div class="stat-num">—</div>
-          <div class="muted">لا توجد بيانات ضمن هذا المحور حاليًا</div>
-        </div>
-        </div></div><div class="tab-pane fade " id="general" role="tabpanel"><div class="grid mt-3">
-        <div class="stat-card">
-          <div class="stat-num">2,036</div>
-          <div class="muted">,966</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2017</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">833,136</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">811,610</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">289,355</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">53,282</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">30,155</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">19,428</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">25%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">84216</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">102853</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">42233</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">38049</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">124609</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">93571</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">740</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2398</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">8031</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4466</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">7096</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3450</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">38742</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">59228</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9478</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">12835</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">56996</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">46369</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1174</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2425</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2094</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1535</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">8597</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">8791</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">19%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">105528</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">112569</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">32784</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">33772</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">89670</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">83789</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3567</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2627</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3968</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3897</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">7520</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2215</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">8%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">42910</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">53368</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17655</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17459</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">52994</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">43752</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1553</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">276</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2062</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">362</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3173</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1526</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">6%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">25755</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">29416</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">12350</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9450</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">26487</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">24707</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">329</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1045</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">633</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1600</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1257</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">18812</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">29156</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9354</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">8390</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">24904</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">16559</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">261</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">65</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">496</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">234</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1338</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">677</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4405</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4936</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1249</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">923</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3257</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1695</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">311</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">176</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">101</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">87</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">124</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4%</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">15882</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">20255</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4953</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5696</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">23092</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17795</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">442</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">582</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">571</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">646</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">635</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">%3</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">11993</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">15695</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5394</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5123</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">12038</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">13087</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">195</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">214</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">477</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">181</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">%4</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">11051</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">12738</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5177</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4060</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">15456</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">10351</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">552</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">285</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">190</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">354</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">452</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">621</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">6538</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">984</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3329</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2518</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9660</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">7426</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">33</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">47</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">125</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1584</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3743</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5305</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1513</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1721</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3287</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3290</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">215</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">30</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">58</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">92</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">91</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4055</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5250</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1838</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1773</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4188</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">67</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">80</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">361</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">269</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">59</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">96</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">511</div>
-          <div class="muted">722</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">187079</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">80282</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">218180</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3138</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">12497</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">10546</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">248,534</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">97970</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">22583</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">103365</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3599</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3629</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17388</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">481</div>
-          <div class="muted">906</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">218097</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">66556</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">173459</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">6194</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">7865</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9735</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">237</div>
-          <div class="muted">090</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">96278</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">35114</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">96746</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1829</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2424</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4699</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">133</div>
-          <div class="muted">029</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">55171</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">21800</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5119</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1374</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2857</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">110</div>
-          <div class="muted">247</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">47968</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17744</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">41464</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">326</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">730</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2015</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17</div>
-          <div class="muted">273</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9341</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2181</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">4952</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">487</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">188</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">90</div>
-          <div class="muted">549</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">36137</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">10649</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">40887</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1024</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1281</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">64</div>
-          <div class="muted">397</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">27688</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">10517</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">25125</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">658</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">61</div>
-          <div class="muted">287</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">23789</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9237</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">25807</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">837</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">544</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">1073</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">40</div>
-          <div class="muted">971</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">15265</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">5847</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">17086</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">172</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2568</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">19</div>
-          <div class="muted">345</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9048</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3234</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">6577</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">245</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">183</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">20</div>
-          <div class="muted">616</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9305</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">3611</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">6768</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">147</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">630</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">155</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">20,483</div>
-          <div class="muted">,620</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">9.94 %</div>
-          <div class="muted">من عدد السكان السعوديون</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">2,036</div>
-          <div class="muted">966</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">353,614</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-num">499,855</div>
-          <div class="muted">مؤشر</div>
-        </div>
-        </div></div>
+
+  <!-- نظرة عامة -->
+  <section class="mb-4">
+    <div class="metric">
+      <div class="label">إجمالي الأشخاص ذوي الإعاقة (المملكة)</div>
+      <div class="value">2,036,966</div>
+    </div>
+    <div class="note mt-2 small">
+      المصدر: هيئة الإحصاءات العامة — مسح الإعاقة (آخر نسخة معتمدة لديك).
+    </div>
+  </section>
+
+  <!-- صف المخططات -->
+  <section class="row g-3 mb-4">
+    <div class="col-12 col-lg-5">
+      <div class="chart-card">
+        <div class="chart-title">توزيع حسب النوع الاجتماعي</div>
+        <canvas id="genderChart" height="200" aria-label="مخطط النوع الاجتماعي" role="img"></canvas>
+        <div id="genderChartHint" class="small text-muted mt-2" style="display:none">* .</div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-7">
+      <div class="chart-card">
+        <div class="chart-title">توزيع حسب فئات الإعاقة</div>
+        <canvas id="catChart" height="200" aria-label="مخطط الفئات" role="img"></canvas>
+        <div id="catChartHint" class="small text-muted mt-2" style="display:none">* .</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- حسب فئات الإعاقة -->
+  <section class="mb-5">
+    <h2 class="section-title">حسب فئات الإعاقة</h2>
+    <div class="table-wrap">
+      <div class="table-responsive">
+        <!--  -->
+        <table class="table table-sm table-hover align-middle mb-0" id="tblCats">
+          <thead>
+            <tr>
+              <th>الفئة</th>
+              <th class="text-center">ذكور</th>
+              <th class="text-center">إناث</th>
+              <th class="text-center">الإجمالي</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>الحركية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>السمعية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>البصرية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>الذهنية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>النطق/التواصل</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>طيف التوحد</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>متعددة</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- حسب المناطق -->
+  <section class="mb-5">
+    <h2 class="section-title">حسب المناطق الإدارية</h2>
+    <div class="table-wrap">
+      <div class="table-responsive">
+        <table class="table table-sm table-hover align-middle mb-0" id="tblRegions">
+          <thead>
+            <tr>
+              <th>المنطقة</th>
+              <th class="text-center">ذكور</th>
+              <th class="text-center">إناث</th>
+              <th class="text-center">الإجمالي</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>الرياض</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>مكة المكرمة</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>المدينة المنورة</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>الشرقية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>عسير</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>تبوك</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>حائل</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>الحدود الشمالية</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>جازان</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>نجران</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>الباحة</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>القصيم</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+            <tr><td>الجوف</td><td class="text-center">—</td><td class="text-center">—</td><td class="text-center">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- حسب النوع الاجتماعي -->
+  <section class="mb-5">
+    <h2 class="section-title">حسب النوع الاجتماعي</h2>
+    <div class="table-wrap">
+      <div class="table-responsive">
+        <!-- أدخل رقمين هنا وسيُحدّث مخطط النوع الاجتماعي تلقائيًا -->
+        <table class="table table-sm table-hover align-middle mb-0" id="tblGender">
+          <thead>
+            <tr>
+              <th>الفئة</th>
+              <th class="text-center">العدد</th>
+              <th class="text-center">ملاحظات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ذكور</td><td class="text-center">—</td><td class="text-center"></td></tr>
+            <tr><td>إناث</td><td class="text-center">—</td><td class="text-center"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- حسب العمر -->
+  <section class="mb-4">
+    <h2 class="section-title">حسب الفئات العمرية</h2>
+    <div class="table-wrap">
+      <div class="table-responsive">
+        <table class="table table-sm table-hover align-middle mb-0" id="tblAge">
+          <thead>
+            <tr>
+              <th>الفئة العمرية</th>
+              <th class="text-center">النسبة/العدد</th>
+              <th class="text-center">ملاحظات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0–14</td><td class="text-center">—</td><td class="text-center"></td></tr>
+            <tr><td>15–24</td><td class="text-center">—</td><td class="text-center"></td></tr>
+            <tr><td>25–44</td><td class="text-center">—</td><td class="text-center"></td></tr>
+            <tr><td>45–64</td><td class="text-center">—</td><td class="text-center"></td></tr>
+            <tr><td>65+</td><td class="text-center">—</td><td class="text-center"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="note mt-3 small">
   </div>
-  <p class="muted mt-3">* هذه الأرقام مستخرجة آليًا من العرض المرفق. يسعدنا تدقيقها/تحديثها حسب المصدر المعتمد لديك.</p>
+
 </main>
+
 <footer>© 2025 بودكاست ذوي الإعاقة — جميع الحقوق محفوظة لمبادرة تلبية</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+  // Helper: read number from cell text (ignore non-digits)
+  function parseNum(txt){
+    if(!txt) return NaN;
+    const m = (txt+'').replace(/[^\d\.]/g,'');
+    return m ? Number(m) : NaN;
+  }
+
+  // GENDER CHART (doughnut)
+  (function(){
+    const tbl = document.getElementById('tblGender');
+    const rows = Array.from(tbl.querySelectorAll('tbody tr'));
+    let males = NaN, females = NaN;
+    rows.forEach(r=>{
+      const label = r.cells[0].textContent.trim();
+      const val = parseNum(r.cells[1].textContent.trim());
+      if(/ذكور/.test(label)) males = val;
+      if(/إناث/.test(label)) females = val;
+    });
+    const hint = document.getElementById('genderChartHint');
+    const ctx = document.getElementById('genderChart').getContext('2d');
+    if(isNaN(males) || isNaN(females)){
+      hint.style.display = 'block';
+    } else {
+      new Chart(ctx,{
+        type:'doughnut',
+        data:{ labels:['ذكور','إناث'], datasets:[{ data:[males,females] }]},
+        options:{
+          plugins:{ legend:{ position:'bottom' } }
+        }
+      });
+    }
+  })();
+
+  // CATEGORY CHART (bar) — reads "الإجمالي" لكل فئة
+  (function(){
+    const tbl = document.getElementById('tblCats');
+    const rows = Array.from(tbl.querySelectorAll('tbody tr'));
+    const labels = [], values = [];
+    rows.forEach(r=>{
+      const label = r.cells[0].textContent.trim();
+      const total = parseNum(r.cells[3].textContent.trim()); // إجمالي
+      if(!isNaN(total)){ labels.push(label); values.push(total); }
+    });
+    const hint = document.getElementById('catChartHint');
+    const ctx = document.getElementById('catChart').getContext('2d');
+    if(!values.length){
+      hint.style.display = 'block';
+    } else {
+      new Chart(ctx,{
+        type:'bar',
+        data:{ labels, datasets:[{ label:'إجمالي', data:values }]},
+        options:{
+          scales:{ y:{ beginAtZero:true }},
+          plugins:{ legend:{ display:false } }
+        }
+      });
+    }
+  })();
+</script>
+
+<!-- === Auto Charts & CSV (non-intrusive) === -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  .stats-tools { display:flex; flex-wrap:wrap; gap:.5rem; margin: .75rem 0 1rem; }
+  .stats-btn { background:linear-gradient(to left,#714984,#523663); color:#fff; border:none; border-radius:10px; padding:.4rem .7rem; cursor:pointer; box-shadow:0 6px 14px rgba(82,54,99,.18); }
+  .stats-card { background:#fff; border-radius:14px; box-shadow:0 12px 24px rgba(0,0,0,.06); padding:1rem; margin:.75rem 0 1.25rem; }
+  .chart-wrap { padding: .5rem; background:#faf8fc; border:1px dashed #e2d7eb; border-radius:12px; }
+  @media(max-width:768px){
+    table { display:block; overflow:auto; }
+  }
+</style>
+<script>
+(function(){
+  function tableToData(table){
+    const headers = Array.from(table.querySelectorAll('thead th, tbody tr:first-child th'));
+    const hasThead = table.querySelector('thead');
+    const rows = Array.from(table.querySelectorAll('tbody tr' + (hasThead ? '' : ':not(:first-child)')));
+    const cols = headers.length ? headers.map(h=>h.textContent.trim()) :
+                 Array.from(table.querySelectorAll('tr:first-child td')).map((_,i)=>'عمود '+(i+1));
+    const data = rows.map(tr => Array.from(tr.children).map(td => td.textContent.trim()));
+    return { cols, data };
+  }
+
+  function detectNumericColumns(cols, data){
+    const numericIdx = [];
+    for(let c=0;c<cols.length;c++){
+      let numericCount=0, total=0;
+      for(const row of data){
+        if(c < row.length){
+          const v = row[c].replace(/[%,\s]/g,'').replace([^\-\.\d]/g,'');
+          if(v!=='' && !isNaN(Number(v))){ numericCount++; }
+          total++;
+        }
+      }
+      if(numericCount >= Math.max(2, Math.floor(total*0.6))) numericIdx.push(c);
+    }
+    return numericIdx;
+  }
+
+  function toCSV(cols, data){
+    const esc = s => `"${String(s).replace(/"/g,'""')}"`;
+    const lines = [cols.map(esc).join(',')].concat(data.map(r => r.map(esc).join(',')));
+    return lines.join('\r\n');
+  }
+
+  function download(filename, text){
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], {type:'text/csv;charset=utf-8;'}));
+    a.download = filename;
+    a.click();
+  }
+
+  function buildCharts(){
+    const tables = document.querySelectorAll('table');
+    let tIndex = 0;
+    tables.forEach((table)=>{
+      const {cols, data} = tableToData(table);
+      if(!data.length || !cols.length) return;
+      const numericIdx = detectNumericColumns(cols, data);
+      // Tools container
+      const tools = document.createElement('div');
+      tools.className = 'stats-tools';
+      const dlBtn = document.createElement('button');
+      dlBtn.className = 'stats-btn';
+      dlBtn.textContent = 'تنزيل CSV';
+      dlBtn.addEventListener('click', ()=>{
+        const csv = toCSV(cols, data);
+        download(`table_${(++tIndex)}.csv`, csv);
+      });
+      tools.appendChild(dlBtn);
+      table.insertAdjacentElement('afterend', tools);
+
+      if(numericIdx.length === 0) return;
+
+      // For first numeric column -> bar chart
+      const numCol = numericIdx[0];
+      const labels = data.map(r => r[0] || 'القيمة');
+      const values = data.map(r => {
+        const v = (r[numCol]||'').replace(/[%,\s]/g,'').replace([^\-\.\d]/g,'');
+        return Number(v||0);
+      });
+
+      const wrap = document.createElement('div');
+      wrap.className = 'stats-card chart-wrap';
+      const canvas = document.createElement('canvas');
+      wrap.appendChild(canvas);
+      tools.insertAdjacentElement('afterend', wrap);
+
+      new Chart(canvas.getContext('2d'), {
+        type: 'bar',
+        data: { labels, datasets: [{ label: cols[numCol] || 'القيم', data: values }]},
+        options: {
+          responsive: true,
+          plugins: { legend: { display: true }, title: { display: false } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+
+      // If there is a second numeric column -> pie chart
+      if(numericIdx.length >= 2){
+        const numCol2 = numericIdx[1];
+        const values2 = data.map(r => {
+          const v = (r[numCol2]||'').replace(/[%,\s]/g,'').replace([^\-\.\d]/g,'');
+          return Number(v||0);
+        });
+        const wrap2 = document.createElement('div');
+        wrap2.className = 'stats-card chart-wrap';
+        const canvas2 = document.createElement('canvas');
+        wrap2.appendChild(canvas2);
+        wrap.insertAdjacentElement('afterend', wrap2);
+        new Chart(canvas2.getContext('2d'), {
+          type: 'pie',
+          data: { labels, datasets: [{ label: cols[numCol2] || 'توزيع', data: values2 }]},
+          options: { responsive:true }
+        });
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', buildCharts);
+})();
+</script>
+
 </body>
 </html>
