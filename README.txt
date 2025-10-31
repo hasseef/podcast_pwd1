@@ -1,10 +1,5 @@
-
-PodcastPWD — Apps Script with Subject per Form Type
-
-1) افتح Google Sheet > Extensions > Apps Script.
-2) الصق محتوى "code_email_subject.gs".
-3) Deploy → New deployment → Web app:
-   - Execute as: Me
-   - Who has access: Anyone with the link
-4) انسخ رابط الـ Web App والصقه في forms.js داخل ENDPOINT_URL.
-5) اختبر نموذجًا من كل صفحة.
+PodcastPWD forms.js (v3 — Required only)
+1) افتح الملف واستبدل ENDPOINT_URL برابط Web App من Google Apps Script.
+2) ارفعه في جذر الموقع بجانب الصفحات.
+3) لا حاجة لتعديل النماذج: السكربت يضيف القيود الأساسية (required/email/phone pattern) تلقائيًا.
+4) بعد النجاح، يتم عرض Toast ثم التحويل إلى thankyou.html.
