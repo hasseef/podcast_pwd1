@@ -77,8 +77,6 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 
 <style id="headings-white">h1,h2,h3,.section-title,.hero-title,header h1,header h2{color:#fff!important}</style>
 <style id="contact-headings-white">header h1, header h2, .hero h1, .hero h2{color:#fff!important}</style>
-<style id="contact-color-fix">header, header h1, header p{color:#fff!important} main h2{color:#000!important}</style>
-<script>window.ENDPOINT_URL="PASTE_YOUR_DEPLOYED_APPS_SCRIPT_URL_HERE";</script>
 </head>
 <body>
 
@@ -103,17 +101,14 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
         <input type="email" class="form-control" placeholder="example@email.com" required>
       </div>
       <div class="mb-3">
-        <label class="form-label">الهاتف (اختياري)</label>
-        <input type="tel" class="form-control" placeholder="+966 5x xxx xxxx" pattern="\+?\d[\d\s\-]{6,}">
-      </div>
-      <div class="mb-3">
         <label class="form-label">الرسالة / الغرض من التواصل</label>
         <textarea class="form-control" rows="4" placeholder="استفسار، رغبة في رعاية، شراكة..." required></textarea>
       </div>
       <button class="btn w-100" style="background-color:#bc9c5b; color:white;">إرسال</button>
-    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
-
+    
   <input type="hidden" name="category" value="guest-or-topic-suggestion">
+
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
   <input type="hidden" name="_next" value="thankyou.html">
 
@@ -144,9 +139,10 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
       <input type="email" class="form-control" placeholder="example@email.com">
     </div>
     <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
-  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
-
+  
   <input type="hidden" name="category" value="guest-or-topic-suggestion">
+
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
   <input type="hidden" name="_next" value="thankyou.html">
 
@@ -168,6 +164,5 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
   </div>
 </footer>
 
-<script src="forms.js"></script>
 </body>
 </html>

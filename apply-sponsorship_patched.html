@@ -29,7 +29,7 @@
   <div class="card card-form">
     <div class="card-body">
       <div class="section-title">بيانات الجهة</div>
-      <form class="js-ajax-form" method="post" action="#">
+      <form onsubmit="return handleUnifiedSubmit(event)" accept-charset="UTF-8" class="js-ajax-form" method="post" action="#">
         <div class="row g-3">
           <div class="col-md-6">
             <label class="form-label">اسم الجهة الراعية</label>
@@ -91,6 +91,12 @@
       <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
 
   <input type="hidden" name="category" value="sponsorship-request">
+
+  <input type="hidden" name="_next" value="thankyou.html">
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <input type="hidden" name="_template" value="table">
 </form>
     </div>
   </div>
