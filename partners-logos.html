@@ -1,68 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شركاؤنا | بودكاست ذوي الإعاقة</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style id="headings-white">h1,h2,h3,.section-title,.hero-title,header h1,header h2{color:#fff!important}</style>
-  
-<style id="brand-buttons">
-:root{--main:#714984;--dark:#523663}
-.btn, .btn-primary, a.btn, .btn-lg, .btn-sm, button {
-  background: linear-gradient(to left,var(--main),var(--dark)) !important;
-  color:#fff!important;border:none!important;border-radius:12px!important;
-  padding:.625rem 1rem!important;box-shadow:0 6px 14px rgba(82,54,99,.18)
-}
-.btn:hover,.btn-primary:hover,a.btn:hover,button:hover{opacity:.95;transform:translateY(-1px)}
-</style>
-
-  <style>body{font-family:'Cairo',system-ui,-apple-system,'Segoe UI','Noto Sans Arabic',sans-serif}</style>
+  <title>كن شريكًا | بودكاست ذوي الإعاقة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--main:#714984;--dark:#523663;--bg:#f6f4f8}
+    body{margin:0;font-family:'Cairo',sans-serif;background:var(--bg);color:#2f2a30}
+    header{background:linear-gradient(to left,var(--main),var(--dark));color:#fff;padding:20px}
+    h1{margin:0;font-size:clamp(22px,3vw,30px)}
+    .container{max-width:980px;margin:22px auto;padding:0 16px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 10px 24px rgba(0,0,0,.08);padding:20px;margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:768px){.grid{grid-template-columns:1fr 1fr}}
+    label{display:block;margin:.4rem 0 .2rem;font-weight:700}
+    input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;font-family:inherit}
+    button{background:linear-gradient(to left,var(--main),var(--dark));color:#fff;border:none;border-radius:12px;padding:12px 16px;cursor:pointer}
+    .note{font-size:.95rem;color:#4b4950}
+  </style>
+  <script>window.ENDPOINT_URL="https://script.google.com/macros/s/AKfycbxCRxg1L5S3BAzHwyC8dZJ6o9ocg0ZVrBiqsBJy58N_qIS7qHoGB2LJ3iN-lWXihgVb8g/exec";</script>
 </head>
 <body>
-<header class="text-center" style="background:linear-gradient(to left,#714984,#523663);color:#fff;padding:2rem 1rem">
-  <h1>شركاؤنا</h1>
-  <p class="mt-1" style="color:#fff;">نعتز بالتعاون مع الجهات والمؤسسات الداعمة لرسالة البودكاست</p>
-  <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#partnerModal">كن شريكًا لنا</button>
-</header>
-<main class="container my-4">
-  <div class="row g-3">
-    <div class="col-6 col-md-3"><div class="p-3 bg-white rounded-3 shadow-sm text-center">شعار 1</div></div>
-    <div class="col-6 col-md-3"><div class="p-3 bg-white rounded-3 shadow-sm text-center">شعار 2</div></div>
-    <div class="col-6 col-md-3"><div class="p-3 bg-white rounded-3 shadow-sm text-center">شعار 3</div></div>
-    <div class="col-6 col-md-3"><div class="p-3 bg-white rounded-3 shadow-sm text-center">شعار 4</div></div>
-  </div>
-</main>
+  <header><h1>كن شريكًا</h1><p class="note">نعتز بالتعاون مع الجهات والمؤسسات الداعمة لرسالتنا.</p></header>
+  <main class="container">
+    <section class="card">
+      <h2 style="margin-top:0">طلب شراكة</h2>
+      <form id="partnerForm" method="post" action="#" accept-charset="UTF-8">
+        <input type="hidden" name="category" value="partnership-request">
+        <label>اسم الجهة</label>
+        <input name="name" required>
+        <label>البريد الإلكتروني</label>
+        <input name="email" type="email" required>
+        <label>رقم التواصل</label>
+        <input name="phone" type="tel">
+        <label>مجال الشراكة</label>
+        <select name="scope">
+          <option value="إعلامية">شراكة إعلامية</option>
+          <option value="رعاية">رعاية</option>
+          <option value="خدمة مجتمعية">خدمة مجتمعية</option>
+          <option value="أخرى">أخرى</option>
+        </select>
+        <label>وصف مختصر</label>
+        <textarea name="message" rows="4" required></textarea>
+        <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+          <button type="submit">إرسال الطلب</button>
+          <small class="note">بالإرسال فأنت توافق على إطار التعاون التنموي.</small>
+        </div>
+      </form>
+    </section>
+  </main>
 
-<div class="modal fade" id="partnerModal" tabindex="-1" aria-labelledby="partnerModalLabel" aria-hidden="true">
-  <div class="modal-dialog"><div class="modal-content">
-    <div class="modal-header"><h5 class="modal-title" id="partnerModalLabel">طلب شراكة</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button></div>
-    <div class="modal-body">
-      <form onsubmit="return handleUnifiedSubmit(event)" class="js-ajax-form" accept-charset="UTF-8" method="post" action="#">
-        <div class="mb-3"><label class="form-label">اسم الجهة</label><input class="form-control" name="entity" required></div>
-        <div class="mb-3"><label class="form-label">اسم المسؤول</label><input class="form-control" name="contact" required></div>
-        <div class="mb-3"><label class="form-label">البريد الإلكتروني</label><input type="email" class="form-control" name="email" required></div>
-        <div class="mb-3"><label class="form-label">مجال الشراكة</label>
-          <select class="form-select" name="scope"><option>رعاية مالية</option><option>شراكة إعلامية</option><option>شراكة تقنية</option><option>مبادرات مجتمعية</option></select></div>
-        <div class="mb-3"><label class="form-label">ملاحظات</label><textarea class="form-control" rows="3" name="notes"></textarea></div>
-        <button type="submit" class="btn btn-primary w-100">إرسال الطلب</button>
-      
-  <input type="hidden" name="category" value="sponsorship-request">
+  <!-- اعتراض موحّد يمنع 405 ويحوّل إلى thankyou.html -->
+  <script>
+  (function () {
+    function initForms() {
+      document.querySelectorAll("form").forEach(function (f) {
+        f.setAttribute("accept-charset", "UTF-8");
+        f.setAttribute("method", "post");
+        f.setAttribute("action", "#");
+        if (!f.querySelector('[name="_honey"],[name="website"],[name="hp"]')) {
+          var hp = document.createElement("input");
+          hp.type = "text"; hp.name = "_honey";
+          hp.style.display = "none"; hp.tabIndex = -1; hp.autocomplete = "off";
+          f.appendChild(hp);
+        }
+        if (!f.querySelector('[name="_next"]')) {
+          var nx = document.createElement("input");
+          nx.type = "hidden"; nx.name = "_next"; nx.value = "thankyou.html";
+          f.appendChild(nx);
+        }
+        if (!f.querySelector('[name="_captcha"]')) {
+          var cp = document.createElement("input");
+          cp.type = "hidden"; cp.name = "_captcha"; cp.value = "false";
+          f.appendChild(cp);
+        }
+        if (!f.querySelector('[name="_template"]')) {
+          var tp = document.createElement("input");
+          tp.type = "hidden"; tp.name = "_template"; tp.value = "table";
+          f.appendChild(tp);
+        }
+      });
+    }
 
-  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+    function toast(msg, isError) {
+      var t = document.getElementById("toast");
+      if (!t) {
+        t = document.createElement("div");
+        t.id = "toast";
+        t.style.cssText =
+          "position:fixed;inset-inline-start:50%;transform:translateX(-50%);bottom:18px;" +
+          "background:" + (isError ? "#b3261e" : "linear-gradient(to left,#714984,#523663)") +
+          ";color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.18);z-index:9999;font-family:'Cairo',sans-serif";
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.display = "block";
+      setTimeout(function(){ t.style.display = "none"; }, 2400);
+    }
+    function thanksURL(){ return "thankyou.html"; }
 
-  <input type="hidden" name="_next" value="thankyou.html">
+    document.addEventListener("submit", function (ev) {
+      var form = ev.target.closest("form");
+      if (!form) return;
+      ev.preventDefault();
 
-  <input type="hidden" name="_captcha" value="false">
+      if (form.checkValidity && !form.checkValidity()) {
+        form.reportValidity && form.reportValidity();
+        toast("رجاءً أكمل الحقول المطلوبة.", true);
+        return;
+      }
+      var hp = form.querySelector('input[name="_honey"], input[name="website"], input[name="hp"]');
+      if (hp && hp.value.trim() !== "") { toast("تم رفض الإرسال (spambot).", true); return; }
 
-  <input type="hidden" name="_template" value="table">
-</form>
-    </div>
-  </div></div>
-</div>
+      var email = form.querySelector('[name="email"]');
+      if (email && email.value && !form.querySelector('[name="_replyto"]')) {
+        var rp = document.createElement("input");
+        rp.type = "hidden"; rp.name = "_replyto"; rp.value = email.value;
+        form.appendChild(rp);
+      }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      var fd = new FormData(form);
+      fd.append("_source_page", location.pathname.replace(/^.*\//, ""));
+      fd.append("_timestamp", new Date().toISOString());
+
+      var btn = form.querySelector('button[type="submit"], input[type="submit"]');
+      var original = btn ? (btn.innerText || btn.value) : null;
+      if (btn) { btn.disabled = true; if (btn.innerText !== undefined) btn.innerText = "جارٍ الإرسال…"; else btn.value = "جارٍ الإرسال…"; }
+
+      fetch(window.ENDPOINT_URL, { method: "POST", body: fd, mode: "no-cors" })
+        .then(function () { toast("تم الإرسال بنجاح"); form.reset(); setTimeout(function(){ location.href = thanksURL(); }, 700); })
+        .catch(function () { toast("تعذر الإرسال، حاول لاحقًا.", true); })
+        .finally(function () { if (btn) { btn.disabled = false; if (original !== null) { if (btn.innerText !== undefined) btn.innerText = original; else btn.value = original; } } });
+    }, true);
+
+    initForms();
+  })();
+  </script>
 </body>
 </html>
