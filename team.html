@@ -117,7 +117,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
   <div class="row g-4">
     <div class="col-md-3 col-sm-6">
       <div class="member-card">
-        <img src="https://via.placeholder.com/150" class="member-img">
+        <img src="sahar.png" class="member-img">
         <div class="name">سحر العنيزي</div>
         <div class="role">🎙️ مقدمة البودكاست</div>
       </div>
@@ -150,7 +150,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
     <p>إذا كان لديك الشغف بالتأثير الإيجابي، يسعدنا استقبال طلبك.</p>
     <button class="btn btn-primary mt-2" onclick="toggleForm()">📩 طلب الانضمام</button>
 
-    <form onsubmit="return handleUnifiedSubmit(event)" accept-charset="UTF-8" id="joinForm" class="text-start mt-4 js-ajax-form" method="post" action="#">
+    <form id="joinForm" class="text-start mt-4 js-ajax-form" method="post" action="#" enctype="text/plain">
       <div class="mb-3">
         <label class="form-label">الاسم الكامل</label>
         <input type="text" class="form-control" placeholder="مثال: محمد القحطاني" required>
@@ -168,16 +168,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
         <textarea class="form-control" rows="4" placeholder="نبذة عنك ولماذا ترغب بالمشاركة..."></textarea>
       </div>
       <button type="submit" class="btn btn-success w-100">إرسال الطلب</button>
-    
-  <input type="hidden" name="category" value="team-join-request">
-
-  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-
-  <input type="hidden" name="_next" value="thankyou.html">
-
-  <input type="hidden" name="_captcha" value="false">
-
-  <input type="hidden" name="_template" value="table">
+    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
 </form>
   </div>
 </main>
@@ -185,5 +176,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 <footer class="footer">
   © 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة لمبادرة تلبية © 2025</footer>
 
+<script src="forms.js"></script>
+<script src="forms-inline.js"></script>
 </body>
 </html>
