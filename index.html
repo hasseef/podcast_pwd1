@@ -108,7 +108,6 @@
   <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
   <!-- جديد: الإحصائيات قبل الارتباط برؤية 2030 -->
   <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
-<li><a href="documents.html">الوثائق والمراجع</a></li>
   <li class="nav-item"><a href="vision2030.html" class="nav-link">الارتباط برؤية 2030</a></li>
   <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
   <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
@@ -194,7 +193,7 @@
 
   <section id="contact" class="mt-5">
     <h2 class="section-title">📬 تواصل معنا</h2>
-    <form class="bg-white p-4 rounded shadow-sm">
+    <form action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
       <div class="mb-3">
         <label class="form-label">الاسم الكامل</label>
         <input type="text" class="form-control" placeholder="اسمك">
@@ -208,12 +207,16 @@
         <textarea class="form-control" rows="4" placeholder="أخبرنا كيف يمكننا خدمتك أو التعاون معك"></textarea>
       </div>
       <button class="btn btn-main w-100">إرسال</button>
-    </form>
+    
+  <input type="hidden" name="category" value="guest-or-topic-suggestion">
+
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+</form>
   </section>
 
   <section class="my-5">
     <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفاً أو محوراً</h2>
-    <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
+    <form action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
       <div class="mb-3">
         <label class="form-label">اسمك الكامل</label>
         <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
@@ -231,7 +234,11 @@
         <input type="email" class="form-control" placeholder="example@email.com">
       </div>
       <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
-    </form>
+    
+  <input type="hidden" name="category" value="guest-or-topic-suggestion">
+
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+</form>
   </section>
 
 </main>
@@ -264,5 +271,6 @@
   });
 </script>
 
+<script src="forms.js"></script>
 </body>
 </html>
