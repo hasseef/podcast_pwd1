@@ -1,22 +1,56 @@
 
-/** Google Apps Script — PodcastPWD Forms (Arabic-safe) */
-const SPREADSHEET_ID = 'PUT_YOUR_SHEET_ID_HERE';
-const SHEET_NAME = 'responses';
-const NOTIFY_EMAIL = 'podcastpwd@talbiya.sa';
-const SENDER_NAME = 'PodcastPWD Forms';
+/** Google Apps Script — PodcastPWD Forms (Arabic-safe, category subjects) */
+const SPREADSHEET_ID = 'PUT_YOUR_SHEET_ID_HERE';   // ضع معرف Google Sheet
+const SHEET_NAME     = 'responses';                // اسم الورقة
+const NOTIFY_EMAIL   = 'podcastpwd@talbiya.sa';    // بريد الاستقبال
+const SENDER_NAME    = 'PodcastPWD Forms';         // اسم المُرسل
+
+/** خريطة عناوين البريد حسب نوع النموذج (category) */
+const SUBJECT_MAP = {
+  'sponsorship-request':       'طلب رعاية — بودكاست ذوي الإعاقة',
+  'partnership-request':       'طلب شراكة — بودكاست ذوي الإعاقة',
+  'guest-or-topic-suggestion': 'اقتراح ضيف/محور — بودكاست ذوي الإعاقة',
+  'general-contact':           'تواصل عام — بودكاست ذوي الإعاقة',
+  'team-join-request':         'طلب انضمام إلى الفريق — بودكاست ذوي الإعاقة'
+};
+
+/** وسم افتراضي إذا لم تُعرف الفئة */
+const DEFAULT_SUBJECT = 'نموذج جديد — بودكاست ذوي الإعاقة';
+
+/** أداة أمان للنص */
+function safe(v){ return (v || '').toString().replace(/[<>]/g, s => ({'<':'&lt;','>':'&gt;'}[s])); }
 
 function doPost(e) {
   const p = e.parameter || {};
   const now = new Date();
+
+  // فتح الشيت
   const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   const sh = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
-  const row = [now, p.category||'', p.name||'', p.email||'', p.phone||'', p.skill||'', p.profile||'', p.message||'', p._source_page||'', p._timestamp||''];
+
+  // حفظ الصف
+  const row = [
+    now,
+    p.category || '',
+    p.name || '',
+    p.email || '',
+    p.phone || '',
+    p.skill || '',
+    p.profile || '',
+    p.message || '',
+    p._source_page || '',
+    p._timestamp || ''
+  ];
   sh.appendRow(row);
 
-  const subject = `نموذج جديد — ${p.category || 'عام'} — ${p.name || 'بدون اسم'}`;
+  // تحديد عنوان البريد حسب category
+  const subjectBase = SUBJECT_MAP[p.category] || DEFAULT_SUBJECT;
+  const subject = p.name ? `${subjectBase} — ${p.name}` : subjectBase;
+
+  // إنشاء جسم الرسالة HTML (اتجاه عربي)
   const htmlBody = `
     <div dir="rtl" style="font-family:Tahoma,Arial">
-      <h3>تم استلام نموذج جديد</h3>
+      <h3 style="margin:0 0 10px">استمارة جديدة</h3>
       <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse">
         <tr><th>التاريخ</th><td>${now.toLocaleString('ar-SA')}</td></tr>
         <tr><th>الفئة</th><td>${safe(p.category)}</td></tr>
@@ -30,9 +64,13 @@ function doPost(e) {
         <tr><th>الطابع الزمني</th><td>${safe(p._timestamp)}</td></tr>
       </table>
     </div>`;
-  const opts = { name:SENDER_NAME, replyTo:(p.email||''), htmlBody:htmlBody };
-  MailApp.sendEmail(NOTIFY_EMAIL, subject, "تم استلام نموذج جديد.", opts);
 
+  const opts = {
+    name: SENDER_NAME,
+    replyTo: p.email || '',
+    htmlBody: htmlBody
+  };
+
+  MailApp.sendEmail(NOTIFY_EMAIL, subject, 'تم استلام نموذج جديد.', opts);
   return ContentService.createTextOutput('OK').setMimeType(ContentService.MimeType.TEXT);
 }
-function safe(v){ return (v||'').toString().replace(/[<>]/g, s => ({'<':'&lt;','>':'&gt;'}[s])); }
