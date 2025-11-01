@@ -193,7 +193,7 @@
 
   <section id="contact" class="mt-5">
     <h2 class="section-title">📬 تواصل معنا</h2>
-    <form accept-charset="UTF-8" action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
+    <form onsubmit="return handleUnifiedSubmit(event)" accept-charset="UTF-8" action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
       <div class="mb-3">
         <label class="form-label">الاسم الكامل</label>
         <input type="text" class="form-control" placeholder="اسمك">
@@ -211,12 +211,18 @@
   <input type="hidden" name="category" value="guest-or-topic-suggestion">
 
   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+  <input type="hidden" name="_next" value="thankyou.html">
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <input type="hidden" name="_template" value="table">
 </form>
   </section>
 
   <section class="my-5">
     <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفاً أو محوراً</h2>
-    <form accept-charset="UTF-8" action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
+    <form onsubmit="return handleUnifiedSubmit(event)" accept-charset="UTF-8" action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
       <div class="mb-3">
         <label class="form-label">اسمك الكامل</label>
         <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
@@ -238,6 +244,12 @@
   <input type="hidden" name="category" value="guest-or-topic-suggestion">
 
   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+  <input type="hidden" name="_next" value="thankyou.html">
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <input type="hidden" name="_template" value="table">
 </form>
   </section>
 
@@ -271,6 +283,5 @@
   });
 </script>
 
-<script src="forms.js"></script>
 </body>
 </html>

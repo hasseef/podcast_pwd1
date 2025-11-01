@@ -44,27 +44,6 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
   border: 1px solid rgba(0,0,0,.08); background:#fff; }
 </style>
 
-
-<style id="unified-font">
-  html, body, input, button, select, textarea {
-    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', sans-serif !important;
-  }
-</style>
-
-
-<style id="brand-buttons">
-:root{--main:#714984;--dark:#523663}
-.btn, .btn-primary, .btn-lg, .btn-sm, a.btn, button {
-  background: linear-gradient(to left,var(--main),var(--dark)) !important;
-  color:#fff !important; border:none !important; 
-  border-radius:12px !important; padding:.625rem 1rem !important;
-  box-shadow: 0 6px 14px rgba(82,54,99,.18);
-}
-.btn:hover, .btn-primary:hover, a.btn:hover, button:hover{
-  opacity:.95; transform: translateY(-1px);
-}
-</style>
-
 </head>
 <body>
 
@@ -74,7 +53,7 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
 </header>
 
 <main class="container bg-white shadow rounded">
-  <form class="js-ajax-form" accept-charset="UTF-8" method="post" action="#">
+  <form onsubmit="return handleUnifiedSubmit(event)" class="js-ajax-form" accept-charset="UTF-8" method="post" action="#">
     <div class="mb-3">
       <label class="form-label">اسمك الكامل</label>
       <input type="text" class="form-control" required>
@@ -101,12 +80,17 @@ h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
   <input type="hidden" name="category" value="guest-or-topic-suggestion">
 
   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+  <input type="hidden" name="_next" value="thankyou.html">
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <input type="hidden" name="_template" value="table">
 </form>
 </main>
 
 <footer class="footer">
   © 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة لمبادرة تلبية © 2025</footer>
 
-<script src="forms.js"></script>
 </body>
 </html>

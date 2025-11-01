@@ -5,90 +5,165 @@
   <title>تواصل معنا | بودكاست ذوي الإعاقة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
-    :root{--main:#714984;--dark:#523663;--ink:#3f3a3f;--gold:#bc9c5b}
-    body { font-family:'Cairo',system-ui,'Segoe UI','Noto Sans Arabic',sans-serif; background:#f9f9f9; color:var(--ink); }
-    header { background:linear-gradient(to left,var(--main),var(--dark)); color:#fff; padding:2rem; text-align:center; }
-    h1,h2,h3 { font-weight:800; line-height:1.5; }
-    h2.section { color:var(--dark); } /* عناوين الأقسام بالأسود/غامق */
-    .btn-brand { background:linear-gradient(to left,var(--main),var(--dark)); color:#fff; border:none; border-radius:12px; padding:.625rem 1rem; box-shadow:0 6px 14px rgba(82,54,99,.18); }
-    .btn-brand:hover { opacity:.96; transform: translateY(-1px); }
-    .cardx { background:#fff; border-radius:14px; box-shadow:0 10px 22px rgba(0,0,0,.06); }
-    footer { background:#111; color:#fff; text-align:center; padding:1.5rem; margin-top:3rem; }
-    .social a { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid var(--gold); color:var(--gold); text-decoration:none; }
-    .social a:hover { background:var(--gold); color:#111; }
-  </style>
+    body { font-family: 'Cairo', sans-serif; font-family: 'Cairo', sans-serif; background-color: #f9f9f9; color: #3f3a3f; }
+    header { background: linear-gradient(to left, #714984, #523663); color: white; padding: 2rem; text-align: center; }
+    footer { background: #3f3a3f; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
+    .pricing-table th, .pricing-table td { border: 1px solid #ddd; padding: 0.75rem; text-align: center; }
+    .pricing-table th { background-color: #714984; color: white; }
+  
+h1, h2, h3 {
+  font-weight: 700;
+  color: #523663;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3f3a3f;
+}
+
+
+button, .btn-primary, .btn-success, .btn {
+  background-color: #714984;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover, .btn:hover {
+  background-color: #523663;
+  transform: translateY(-2px);
+}
+.card, .member-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover, .member-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+</style>
+
+<style id="patch-inline-style">
+h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
+.social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
+.social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
+.inline-host-photo { width: 140px; height: auto; border-radius: 12px; margin-inline-start: 12px; vertical-align: middle;
+  border: 1px solid rgba(0,0,0,.08); background:#fff; }
+</style>
+
+
+<style id="unified-font">
+  html, body, input, button, select, textarea {
+    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', sans-serif !important;
+  }
+</style>
+
+
+<style id="brand-buttons">
+:root{--main:#714984;--dark:#523663}
+.btn, .btn-primary, .btn-lg, .btn-sm, a.btn, button {
+  background: linear-gradient(to left,var(--main),var(--dark)) !important;
+  color:#fff !important; border:none !important; 
+  border-radius:12px !important; padding:.625rem 1rem !important;
+  box-shadow: 0 6px 14px rgba(82,54,99,.18);
+}
+.btn:hover, .btn-primary:hover, a.btn:hover, button:hover{
+  opacity:.95; transform: translateY(-1px);
+}
+</style>
+
+<style id="headings-white">h1,h2,h3,.section-title,.hero-title,header h1,header h2{color:#fff!important}</style>
+<style id="contact-headings-white">header h1, header h2, .hero h1, .hero h2{color:#fff!important}</style>
+<style id="contact-color-fix">header, header h1, header p{color:#fff!important} main h2{color:#000!important}</style>
 </head>
 <body>
 
 <header>
   <h1 class="fw-bold">📬 تواصل معنا</h1>
-  <p class="mt-2">نرحّب بتواصلكم للرعاية، الشراكة، أو تقديم المقترحات</p>
+  <p class="mt-2">نرحب بتواصلكم للرعاية، الشراكة، أو تقديم المقترحات</p>
 </header>
 
 <main class="container py-5">
 
-  <!-- نموذج التواصل العام -->
+  
+
   <section class="mb-5">
-    <h2 class="h4 mb-3 section">📨 نموذج التواصل</h2>
-    <form accept-charset="UTF-8" action="#" method="post" class="js-ajax-form cardx p-4">
+    <h2 class="h4 mb-3 text-[#523663]">📨 نموذج التواصل</h2>
+    <form onsubmit="return handleUnifiedSubmit(event)" accept-charset="UTF-8" action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
       <div class="mb-3">
         <label class="form-label">الاسم الكامل</label>
-        <input type="text" class="form-control" name="name" placeholder="مثال: شركة إعلام المستقبل" required>
+        <input type="text" class="form-control" placeholder="مثال: شركة إعلام المستقبل" required>
       </div>
       <div class="mb-3">
         <label class="form-label">البريد الإلكتروني</label>
-        <input type="email" class="form-control" name="email" placeholder="example@email.com" required>
+        <input type="email" class="form-control" placeholder="example@email.com" required>
       </div>
       <div class="mb-3">
         <label class="form-label">الهاتف (اختياري)</label>
-        <input type="tel" class="form-control" name="phone" placeholder="+966 5x xxx xxxx" pattern="\+?\d[\d\s\-]{6,}">
+        <input type="tel" class="form-control" placeholder="+966 5x xxx xxxx" pattern="\+?\d[\d\s\-]{6,}">
       </div>
       <div class="mb-3">
         <label class="form-label">الرسالة / الغرض من التواصل</label>
-        <textarea class="form-control" rows="4" name="message" placeholder="استفسار، رغبة في رعاية، شراكة..." required></textarea>
+        <textarea class="form-control" rows="4" placeholder="استفسار، رغبة في رعاية، شراكة..." required></textarea>
       </div>
-      <input type="hidden" name="category" value="general-contact">
-      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-      <button class="btn-brand w-100" type="submit">إرسال</button>
-    </form>
+      <button class="btn w-100" style="background-color:#bc9c5b; color:white;">إرسال</button>
+    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
+
+  <input type="hidden" name="category" value="guest-or-topic-suggestion">
+
+  <input type="hidden" name="_next" value="thankyou.html">
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <input type="hidden" name="_template" value="table">
+</form>
   </section>
 
-  <!-- نموذج اقتراح ضيف/محور ضمن صفحة التواصل -->
-  <section class="mb-5">
-    <h2 class="h4 mb-3 section">💡 اقترح ضيفاً أو محوراً</h2>
-    <form accept-charset="UTF-8" action="#" method="post" class="js-ajax-form cardx p-4">
-      <div class="mb-3">
-        <label class="form-label">اسمك الكامل</label>
-        <input type="text" class="form-control" name="name" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">اسم الضيف المقترح (إن وجد)</label>
-        <input type="text" class="form-control" name="proposed_guest">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">محور أو موضوع تقترحه</label>
-        <textarea class="form-control" rows="4" name="message" placeholder="مثل: التوظيف، التسهيلات التعليمية، الابتكار في أدوات الوصول..." required></textarea>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">بريدك الإلكتروني (اختياري)</label>
-        <input type="email" class="form-control" name="email">
-      </div>
-      <input type="hidden" name="category" value="guest-or-topic-suggestion">
-      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-      <button class="btn-brand w-100" type="submit">إرسال الاقتراح</button>
-    </form>
-  </section>
+
+<section class="mb-5">
+  <h2 class="h4 mb-3 text-[#523663]">💡 اقترح ضيفًا أو محورًا</h2>
+  <form onsubmit="return handleUnifiedSubmit(event)" accept-charset="UTF-8" action="#" method="post" class="bg-white p-4 rounded shadow-sm js-ajax-form">
+    <div class="mb-3">
+      <label class="form-label">اسمك الكامل</label>
+      <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">اسم الضيف المقترح (إن وجد)</label>
+      <input type="text" class="form-control" placeholder="مثال: د. عبدالله القحطاني">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">محور أو موضوع تقترحه</label>
+      <textarea class="form-control" rows="4" placeholder="مثل: التوظيف، التسهيلات التعليمية، الابتكار في أدوات الوصول..." required></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">بريدك الإلكتروني (اختياري)</label>
+      <input type="email" class="form-control" placeholder="example@email.com">
+    </div>
+    <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
+
+  <input type="hidden" name="category" value="guest-or-topic-suggestion">
+
+  <input type="hidden" name="_next" value="thankyou.html">
+
+  <input type="hidden" name="_captcha" value="false">
+
+  <input type="hidden" name="_template" value="table">
+</form>
+</section>
 
 </main>
 
 <footer>
-  <p class="mb-2">© 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة لمبادرة تلبية © 2025</p>
-  <div class="social d-flex justify-content-center gap-3">
-    <a aria-label="Instagram" href="https://www.instagram.com/podcastpwd" target="_blank" rel="noopener" title="Instagram"><span style="font-weight:700;">IG</span></a>
-    <a aria-label="TikTok" href="https://www.tiktok.com/@podcastpwd" target="_blank" rel="noopener" title="TikTok"><span style="font-weight:700;">TT</span></a>
-    <a aria-label="X" href="https://x.com/podcastpwd" target="_blank" rel="noopener" title="X"><span style="font-weight:700;">X</span></a>
+  <p>© 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة لمبادرة تلبية © 2025</p>
+
+  <div class="d-flex justify-content-center gap-3 mt-3">
+    <a href="https://www.instagram.com/podcastpwd" target="_blank" rel="noopener" class="btn btn-sm">Instagram</a>
+    <a href="https://www.tiktok.com/@podcastpwd" target="_blank" rel="noopener" class="btn btn-sm">TikTok</a>
+    <a href="https://x.com/podcastpwd" target="_blank" rel="noopener" class="btn btn-sm">X</a>
   </div>
 </footer>
 
