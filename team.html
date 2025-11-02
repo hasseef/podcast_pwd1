@@ -1,182 +1,193 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>فريق العمل | بودكاست ذوي الإعاقة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #f9f9f9;
-      color: #3f3a3f;
-    }
-    header.hero {
-      background: linear-gradient(to left, #714984, #523663);
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .member-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-    .member-card:hover {
-      transform: translateY(-5px);
-    }
-    .member-img {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 4px solid #fff;
-    }
-    .name {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    .role {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    .footer {
-      background: #3f3a3f;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 4rem;
-    }
-    .join-box {
-      background: #fff;
-      border: 2px dashed #714984;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-    }
-    .btn-primary {
-      background: #714984;
-      border: none;
-    }
-    #joinForm {
-      display: none;
-      text-align: right;
-      margin-top: 2rem;
-    }
-  </style>
-  <script>
-    function toggleForm() {
-      var form = document.getElementById("joinForm");
-      form.style.display = form.style.display === "none" ? "block" : "none";
-    }
-  </script>
-
-<style id="patch-inline-style">
-h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
-.social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
-.social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
-.inline-host-photo { width: 140px; height: auto; border-radius: 12px; margin-inline-start: 12px; vertical-align: middle;
-  border: 1px solid rgba(0,0,0,.08); background:#fff; }
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>فريق العمل | بودكاست ذوي الإعاقة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<style>
+:root{--main:#714984;--dark:#523663;--gold:#caa968;--ink:#3f3a3f;--bg:#f6f5f8}
+body{font-family:'Cairo',system-ui,'Segoe UI','Noto Sans Arabic',sans-serif;background:var(--bg);color:var(--ink)}
+.navbar{background:linear-gradient(to left,var(--main),var(--dark));}
+.navbar .nav-link,.navbar-brand{color:#fff!important}
+.page-hero{background:linear-gradient(135deg,var(--main),var(--dark));color:#fff;padding:3rem 1rem;text-align:center}
+.card-team{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 26px rgba(0,0,0,.08);height:100%}
+.card-team .cover{background:#f3edf8;display:flex;align-items:center;justify-content:center;height:210px}
+.card-team img{max-height:100%;max-width:100%;object-fit:cover}
+.card-team .body{padding:1rem}
+.card-team h5{margin:0 0 .25rem 0;font-weight:800}
+.card-team .role{color:#6f6a78;font-size:.95rem}
+.section-title{font-weight:800}
+.form-wrap{background:#fff;border-radius:18px;box-shadow:0 12px 26px rgba(0,0,0,.08);padding:1.25rem}
+.btn-brand{background:linear-gradient(to left,var(--main),var(--dark));color:#fff;border:none;border-radius:12px;padding:.6rem 1rem;box-shadow:0 6px 14px rgba(82,54,99,.18)}
+footer{background:#3f3a3f;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem}
+.hint{font-size:.9rem;color:#6f6a78}
+.badge-gold{background:var(--gold);color:#111}
 </style>
-
-
-<style id="unified-font">
-  html, body, input, button, select, textarea {
-    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', sans-serif !important;
-  }
-</style>
-
-
-<style id="brand-buttons">
-:root{--main:#714984;--dark:#523663}
-.btn, .btn-primary, .btn-lg, .btn-sm, a.btn, button {
-  background: linear-gradient(to left,var(--main),var(--dark)) !important;
-  color:#fff !important; border:none !important; 
-  border-radius:12px !important; padding:.625rem 1rem !important;
-  box-shadow: 0 6px 14px rgba(82,54,99,.18);
-}
-.btn:hover, .btn-primary:hover, a.btn:hover, button:hover{
-  opacity:.95; transform: translateY(-1px);
-}
-</style>
-
 </head>
 <body>
 
-<header class="hero">
-  <h1 class="fw-bold text-white">فريق بودكاست ذوي الإعاقة</h1>
-  <p>نحن خلف الميكروفون والكاميرا، نروي قصص التحدي والإلهام</p>
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">بودكاست ذوي الإعاقة</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html#episodes">الحلقات</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link" href="statistics.html">الإحصائيات</a></li>
+        <li class="nav-item"><a class="nav-link" href="documents.html">الوثائق والمراجع</a></li>
+        <li class="nav-item"><a class="nav-link" href="vision2030.html">الارتباط برؤية 2030</a></li>
+        <li class="nav-item"><a class="nav-link" href="sponsorships.html">فرص الرعاية</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <h1 class="fw-bold mb-2">فريق العمل</h1>
+    <p class="mb-0">نعمل بتكاملٍ بين المحتوى والإنتاج المرئي والإتاحة؛ لنقدّم تجربة إنسانية محترفة.</p>
+  </div>
 </header>
 
-<main class="container py-5">
+<main class="container my-4">
   <div class="row g-4">
-    <div class="col-md-3 col-sm-6">
-      <div class="member-card">
-        <img src="sahar.png" class="member-img">
-        <div class="name">سحر العنيزي</div>
-        <div class="role">🎙️ مقدمة البودكاست</div>
+    <!-- 1. Host -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-team h-100">
+        <div class="cover">
+          <img src="sahar.png" alt="سحر العنيزي - مقدمة البرنامج" onerror="this.src='sahar.jpeg';">
+        </div>
+        <div class="body">
+          <h5>الأستاذة سحر العنيزي</h5>
+          <div class="role">مقدمة البرنامج</div>
+          <p class="mt-2 hint">تقدّم الحوار بإحساس ومسؤولية وتضمن بيئة ترحيبية للضيوف والجمهور.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="member-card">
-        <img src="https://via.placeholder.com/150" class="member-img">
-        <div class="name">—</div>
-        <div class="role">🧠 المنتج التنفيذي</div>
+    <!-- 2. Executive Producer & Content -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-team h-100">
+        <div class="cover"><span class="badge badge-gold p-2">إدارة المحتوى</span></div>
+        <div class="body">
+          <h5>المنتج التنفيذي ومدير المحتوى</h5>
+          <div class="role">قيادة التحرير وتنسيق الإنتاج</div>
+          <p class="mt-2 hint">إدارة الرؤية التحريرية، الجدولة، الميزانية، ومواءمة الرعايات مع المعايير.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="member-card">
-        <img src="https://via.placeholder.com/150" class="member-img">
-        <div class="name">—</div>
-        <div class="role">📋 الإعداد والتنسيق</div>
+    <!-- 3. Episodes Producer & Research -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-team h-100">
+        <div class="cover"><span class="badge bg-secondary p-2">بحث الحلقات</span></div>
+        <div class="body">
+          <h5>منتج الحلقات وباحث المحتوى</h5>
+          <div class="role">محاور دقيقة وضيوف مناسبون</div>
+          <p class="mt-2 hint">إعداد البنوك المعرفية، التحقق من الحقائق، وتنسيق استضافة الخبراء.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="member-card">
-        <img src="https://via.placeholder.com/150" class="member-img">
-        <div class="name">—</div>
-        <div class="role">🎧 هندسة الصوت والنشر</div>
+    <!-- 4. AV Engineering -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-team h-100">
+        <div class="cover"><span class="badge bg-dark p-2">AV</span></div>
+        <div class="body">
+          <h5>الهندسة الصوتية والتقنية المرئية</h5>
+          <div class="role">صوت واضح وصورة متزنة</div>
+          <p class="mt-2 hint">تجهيز الصوت والكاميرات والإضاءة وإخراج نسخ متوافقة مع معايير الإتاحة.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="mt-5 join-box">
-    <h3>هل ترغب بالانضمام لفريقنا؟</h3>
-    <p>إذا كان لديك الشغف بالتأثير الإيجابي، يسعدنا استقبال طلبك.</p>
-    <button class="btn btn-primary mt-2" onclick="toggleForm()">📩 طلب الانضمام</button>
-
-    <form id="joinForm" class="text-start mt-4 js-ajax-form" method="post" action="#" enctype="text/plain">
-      <div class="mb-3">
-        <label class="form-label">الاسم الكامل</label>
-        <input type="text" class="form-control" placeholder="مثال: محمد القحطاني" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">التخصص أو المهارة</label>
-        <input type="text" class="form-control" placeholder="مثال: مونتاج، إعداد، نشر...">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">رابط التواصل أو الحساب</label>
-        <input type="url" class="form-control" placeholder="مثال: https://x.com/username">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">رسالة تعريفية</label>
-        <textarea class="form-control" rows="4" placeholder="نبذة عنك ولماذا ترغب بالمشاركة..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-success w-100">إرسال الطلب</button>
-    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
-</form>
-  </div>
+  <!-- Join Form -->
+  <section class="mt-5">
+    <h2 class="section-title mb-3">انضم لفريق العمل</h2>
+    <div class="form-wrap">
+      <form id="teamJoin" method="post" action="#">
+        <input type="hidden" name="_category" value="team-join-request">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">الاسم الكامل</label>
+            <input type="text" name="full_name" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">البريد الإلكتروني</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">رقم الجوال</label>
+            <input type="tel" name="phone" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">المدينة / المنطقة</label>
+            <input type="text" name="city" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">الوظيفة المتقدم عليها</label>
+            <select name="role_applied" class="form-select" required>
+              <option value="" selected disabled>اختر</option>
+              <option>مقدمة البرنامج</option>
+              <option>المنتج التنفيذي ومدير المحتوى</option>
+              <option>منتج الحلقات وباحث المحتوى</option>
+              <option>الهندسة الصوتية والتقنية المرئية</option>
+              <option>مخرج مرئي</option>
+              <option>مدير تصوير/كاميرا</option>
+              <option>مهندس صوت</option>
+              <option>مونتير فيديو</option>
+              <option>موشن جرافيك</option>
+              <option>مسؤول الإتاحة</option>
+              <option>منسق لغة الإشارة</option>
+              <option>محرر ترجمة/Captioning</option>
+              <option>الشراكات والرعايات</option>
+              <option>التسويق والمنصات</option>
+              <option>الويب والتحليلات</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">روابط أعمال مرتبطة بالدور</label>
+            <input type="url" name="portfolio_links" class="form-control" placeholder="رابط ريل/يوتيوب/جوجل درايف" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">التوفر الزمني</label>
+            <select name="availability" class="form-select" required>
+              <option value="" selected disabled>اختر</option>
+              <option>دوام كامل</option>
+              <option>جزئي</option>
+              <option>مرن/بالجُزء</option>
+              <option>وفق الجداول (حسب الحلقات)</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">العتاد المتوفر (إن وجد)</label>
+            <input type="text" name="gear" class="form-control" placeholder="كاميرات/عدسات/ميكروفونات/إضاءة">
+          </div>
+          <div class="col-12">
+            <label class="form-label">نبذة قصيرة</label>
+            <textarea name="bio" class="form-control" rows="3" required placeholder="٥ أسطر عن خبرتك وما يميزك"></textarea>
+          </div>
+          <div class="col-12 form-check ms-2">
+            <input class="form-check-input" type="checkbox" id="agree" required>
+            <label class="form-check-label" for="agree">أوافق على مدونة السلوك وحفظ سرية المحتوى أثناء العمل.</label>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-brand" type="submit">إرسال الطلب</button>
+          </div>
+        </div>
+      </form>
+      <p class="mt-2 hint">سيتم تقييم الطلبات وفق الملاءمة للدور وتوفر الشواغر.</p>
+    </div>
+  </section>
 </main>
 
-<footer class="footer">
-  © 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة لمبادرة تلبية © 2025</footer>
+<footer>© 2025 بودكاست ذوي الإعاقة – جميع الحقوق محفوظة لمبادرة تلبية</footer>
 
-<script src="forms.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="forms-inline.js"></script>
 </body>
 </html>
