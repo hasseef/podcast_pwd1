@@ -93,16 +93,29 @@
   <style>html{scroll-behavior:smooth}</style>
 
 <style>
-/* شعارات الهيدر - يسار القائمة */
-.header-logos{gap:14px}
-.header-logos img{height:32px;width:auto;filter:brightness(0) invert(1);opacity:.95}
+/* شعارات الهيدر مثبتة يسار الشريط */
+.navbar .container{position:relative}
+.header-logos{position:absolute; left:12px; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:14px; z-index:2}
+.header-logos img{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.95}
+@media (min-width:768px){.header-logos img{height:32px}}
 @media (min-width:992px){.header-logos img{height:36px}}
+/* ترك فراغ بسيط للهوامش على الأجهزة الصغيرة عند فتح القائمة */
+@media (max-width:991.98px){
+  .navbar{padding-left:72px}
+}
 </style>
 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow">
+\1
+
+<!-- شعارات الهيدر (يسار) -->
+<div class="header-logos">
+  <img src="Vision2030.png" alt="رؤية السعودية 2030" loading="lazy">
+  <img src="talbiya.png"   alt="مبادرة تلبية"       loading="lazy">
+</div>
+
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -116,7 +129,6 @@
   <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
   <!-- جديد: الإحصائيات قبل الارتباط برؤية 2030 -->
   <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
-        <li class="nav-item"><a class="nav-link" href="documents.html">الوثائق والمراجع</a></li>
   <li class="nav-item"><a href="vision2030.html" class="nav-link">الارتباط برؤية 2030</a></li>
   <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
   <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
@@ -272,5 +284,6 @@
   });
 </script>
 
+<script src="forms-inline.js"></script>
 </body>
 </html>
