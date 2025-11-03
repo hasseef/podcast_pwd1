@@ -1,268 +1,432 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>body { font-family: "Cairo", sans-serif; }</style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>بودكاست ذوي الإعاقة</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --main-color: #714984;
-      --dark-color: #523663;
-      --accent-color: #bc9c5b;
-      --text-color: #3f3a3f;
-      --bg-color: #f4f4f4;
-    }
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-    }
-    .navbar {
-      background-color: var(--main-color);
-    }
-    .navbar .nav-link, .navbar-brand {
-      color: #fff !important;
-    }
-    .hero {
-      background: linear-gradient(to left, var(--main-color), var(--dark-color));
-      color: white;
-      padding: 5rem 1rem;
-      text-align: center;
-    }
-    .hero img {
-      max-height: 100px;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      border-right: 5px solid var(--accent-color);
-      padding-right: 12px;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-    }
-    .feature-box, .episode-card, .testimonial, .partner-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
-    }
-    .btn-main {
-      background-color: var(--accent-color);
-      color: white;
-    }
-    footer {
-      background-color: var(--text-color);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-  </style>
-
-  <style id="patch-inline-style">
-  h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
-  .social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
-  .social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
-  .inline-host-photo { width: 140px; height: auto; border-radius: 12px; margin-inline-start: 12px; vertical-align: middle;
-    border: 1px solid rgba(0,0,0,.08); background:#fff; }
-  </style>
-
-  <style id="unified-font">
-    html, body, input, button, select, textarea {
-      font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', sans-serif !important;
-    }
-  </style>
-
-  <style id="brand-buttons">
-  :root{--main:#714984;--dark:#523663}
-  .btn, .btn-primary, .btn-lg, .btn-sm, a.btn, button {
-    background: linear-gradient(to left,var(--main),var(--dark)) !important;
-    color:#fff !important; border:none !important; 
-    border-radius:12px !important; padding:.625rem 1rem !important;
-    box-shadow: 0 6px 14px rgba(82,54,99,.18);
-  }
-  .btn:hover, .btn-primary:hover, a.btn:hover, button:hover{
-    opacity:.95; transform: translateY(-1px);
-  }
-  </style>
-
-  <style id="home-headings-black">main h2, .section-title{color:#000!important}</style>
-  <style>html{scroll-behavior:smooth}</style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ملتقى تلبية التعريفي</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js" data-presets="env,react"></script>
+<style>
+  :root { --green:#1B6734 }
+  body { font-family:'Tajawal', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif }
+  html { scroll-behavior:smooth }
+  .glass { background:rgba(255,255,255,.7); backdrop-filter:blur(8px) }
+  .ribbon { background:linear-gradient(90deg,#eafff3,#ffffff) }
+  .logo-img { max-height: 44px; height: 44px; object-fit: contain; display:inline-block }
+</style>
 </head>
-<body>
+<body class="bg-white text-gray-900">
+<div id="root"></div>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">بودكاست ذوي الإعاقة</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
-  <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
-  <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
-  <!-- جديد: الإحصائيات قبل الارتباط برؤية 2030 -->
-  <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
-        <li class="nav-item"><a class="nav-link" href="documents.html">الوثائق والمراجع</a></li>
-  <li class="nav-item"><a href="vision2030.html" class="nav-link">الارتباط برؤية 2030</a></li>
-  <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
-  <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
-</ul>
+<script type="text/babel">
+/* ========== الهوية ========== */
+const PHONE = '0507208120';
+const PDF_FILE = 'ملتقى تلبية حائل.pdf';
 
+/* ضع روابط الصور إن أردت استخدام ملفات خارجية.
+   النسخة الحالية تستخدم أمثلة/بدائل SVG نصية لضمان الظهور فورًا. */
+const LOGO_TAL = 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56"><rect width="100%" height="100%" fill="white"/><text x="10" y="36" font-size="24" fill="#1B6734" font-family="Tahoma">Talbiya</text></svg>`);
+const LOGO_HAS = 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="220" height="56"><rect width="100%" height="100%" fill="white"/><text x="10" y="36" font-size="24" fill="#1B6734" font-family="Tahoma">Hasseef</text></svg>`);
+const LOGO_VIS = 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="56"><rect width="100%" height="100%" fill="white"/><text x="10" y="36" font-size="20" fill="#777" font-family="Tahoma">Vision 2030</text></svg>`);
+
+/* ========== شعارات إمارات المناطق (أدرجنا بدائل نصية لضمان الظهور) ========== */
+const EMIRATE_SRC = {
+  'riyadh': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة الرياض</text></svg>`),
+  'makkah': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة مكة المكرمة</text></svg>`),
+  'madinah': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة المدينة المنورة</text></svg>`),
+  'qassim': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة القصيم</text></svg>`),
+  'eastern': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة المنطقة الشرقية</text></svg>`),
+  'aseer': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة عسير</text></svg>`),
+  'tabuk': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة تبوك</text></svg>`),
+  'hail': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة حائل</text></svg>`),
+  'northern-borders': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="420" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="26" fill="#0a7c39" font-family="Tahoma">إمارة منطقة الحدود الشمالية</text></svg>`),
+  'jazan': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة جازان</text></svg>`),
+  'najran': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة نجران</text></svg>`),
+  'albaha': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة الباحة</text></svg>`),
+  'aljouf': 'data:image/svg+xml;base64,' + btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96"><rect width="100%" height="100%" fill="white"/><text x="12" y="58" font-size="28" fill="#0a7c39" font-family="Tahoma">إمارة منطقة الجوف</text></svg>`),
+};
+const EMIRATE_NAME = {
+  'riyadh':'إمارة منطقة الرياض','makkah':'إمارة منطقة مكة المكرمة','madinah':'إمارة منطقة المدينة المنورة',
+  'qassim':'إمارة منطقة القصيم','eastern':'إمارة المنطقة الشرقية','aseer':'إمارة منطقة عسير','tabuk':'إمارة منطقة تبوك',
+  'hail':'إمارة منطقة حائل','northern-borders':'إمارة منطقة الحدود الشمالية','jazan':'إمارة منطقة جازان',
+  'najran':'إمارة منطقة نجران','albaha':'إمارة منطقة الباحة','aljouf':'إمارة منطقة الجوف'
+};
+
+/* ========== مناطق وتاريخ ========== */
+const STORAGE_KEY='talbiya_regions_sc_priv';
+const DEFAULT_REGIONS=[
+  {id:'riyadh', name:'الرياض', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'makkah', name:'مكة المكرمة', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'madinah', name:'المدينة المنورة', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'qassim', name:'القصيم', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'eastern', name:'الشرقية', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'aseer', name:'عسير', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'tabuk', name:'تبوك', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'hail', name:'حائل', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'northern-borders', name:'الحدود الشمالية', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'jazan', name:'جازان', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'najran', name:'نجران', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'albaha', name:'الباحة', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+  {id:'aljouf', name:'الجوف', date:'11 يناير 2026م', venue:'يُحدد لاحقًا'},
+];
+
+const q = new URLSearchParams(location.search);
+const PRIVATE_MODE = q.get('private')==='1';
+
+const loadRegions=()=>{ try{const raw=localStorage.getItem(STORAGE_KEY); return raw? JSON.parse(raw): DEFAULT_REGIONS }catch{ return DEFAULT_REGIONS } };
+const slug=(t)=>(t||'').toString().trim().replace(/\s+/g,'-').toLowerCase()||'venue';
+const buildLink=(id,venue,priv=false)=>{ const u=new URL(location.href); u.searchParams.set('region',id); u.searchParams.set('venue',slug(venue)); if(priv) u.searchParams.set('private','1'); else u.searchParams.delete('private'); return u.toString(); };
+
+const PlaceholderLogo=({name})=>(<div className="h-10 px-3 flex items-center justify-center rounded border text-[12px] text-emerald-700 bg-white">{name}</div>);
+
+function Ribbon({activeId,regionName}){
+  const src=EMIRATE_SRC[activeId]||''; const name=EMIRATE_NAME[activeId]||('إمارة '+regionName);
+  return (<div className="ribbon border-b">
+    <div className="container mx-auto px-4 h-14 flex items-center justify-center gap-3">
+      {src? <img src={src} className="logo-img" alt={name}/> : <PlaceholderLogo name={name}/>}
+      <span className="text-sm md:text-base text-[var(--green)] font-bold">برعاية كريمة من إمارة {regionName}</span>
     </div>
+  </div>);
+}
+
+const IdentityStrip=()=> (
+  <div className="mt-6 flex items-center gap-4 flex-wrap justify-center">
+    <img src={LOGO_TAL} className="h-14" alt="Talbiya"/>
+    <img src={LOGO_HAS} className="h-12" alt="Hasseef"/>
+    <img src={LOGO_VIS} className="h-10" alt="Vision 2030"/>
   </div>
-</nav>
+);
 
-<section class="hero" id="top">
-  <img src="logo.png" alt="شعار بودكاست" />
-  <h1 class="display-5 fw-bold"><span style="color:#fff;">نُضيء الطريق للتكامل</span></h1>
-  <p class="lead">منصة إعلامية إنسانية تُعنى بجوانب حياة الأشخاص ذوي الإعاقة، تسلط الضوء على التحديات والفرص وتدعم التكامل لابتكار الحلول وتحسين جودة الحياة عبر استضافة الخبراء والجهات ذات العلاقة.</p>
-  <a href="#episodes" class="btn btn-main mt-3 px-4">ابدأ بالمشاهدة</a>
-</section>
+function About(){
+  return (
+    <section className="py-10 bg-gradient-to-b from-emerald-50 to-white">
+      <div className="container mx-auto px-4 text-center">
+        <h1 className="text-3xl lg:text-4xl font-extrabold mb-3">ملتقى تلبية التعريفي</h1>
+        <p className="text-gray-700 mb-6">فعالية تعريفية بمبادرة تلبية ومشروعها «حصيف» بالشراكة مع إمارة المنطقة، مع معرض مصاحب للمشاريع وورش عمل — لمدة يومين.</p>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <a href="#register" className="px-5 py-3 rounded-xl bg-[var(--green)] text-white">سجّل حضورك</a>
+          <a href="#cfp" className="px-5 py-3 rounded-xl border">قدّم كمُتحدث/مدرّب</a>
+          <a href="#sponsor" className="px-5 py-3 rounded-xl border">الرعايات</a>
+        </div>
+        <IdentityStrip/>
+      </div>
+    </section>
+  );
+}
 
-<main class="container py-5">
+function RegionCard({region}){
+  if(!region) return null;
+  const publicLink=buildLink(region.id,region.venue,false);
+  const privateLink=buildLink(region.id,region.venue,true);
+  return (
+    <section className="py-8">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-[var(--green)] mb-3">ملتقى تلبية — {region.name}</h2>
+        <p className="mb-1"><b>التاريخ:</b> {region.date}</p>
+        <p className="mb-6"><b>المكان:</b> {region.venue}</p>
+        <div className="flex flex-wrap items-center gap-3">
+          {!PRIVATE_MODE && <a href={publicLink} className="px-4 py-2 rounded-xl border">فتح الرابط العام</a>}
+          <button className="px-4 py-2 rounded-xl bg-[var(--green)] text-white" onClick={()=>navigator.clipboard?.writeText(publicLink)}>نسخ الرابط العام</button>
+          <button className="px-4 py-2 rounded-xl border" onClick={()=>navigator.clipboard?.writeText(privateLink)}>نسخ رابط خاص بالمنطقة</button>
+        </div>
+        {PRIVATE_MODE && <p className="text-xs text-gray-500 mt-3">هذا العرض خاص بهذه المنطقة فقط (Private Mode).</p>}
+      </div>
+    </section>
+  );
+}
 
-  <section id="episodes">
-    <h2 class="section-title">🎧 الحلقات</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>التعليم الشامل</h5>
-          <p>مع د. محمد القحطاني</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
+function Agenda(){
+  const items=[
+    {day:'اليوم الأول',sessions:['الافتتاح والشراكات مع إمارة المنطقة','جلسة: دور مبادرة تلبية في تمكين الحلول','جلسة: التعريف بمشروع منصة حصيف']},
+    {day:'اليوم الثاني',sessions:['حلقة نقاش: فرص الرعاية والمسؤولية الاجتماعية','ورشة: تصميم مبادرات مجتمعية فعّالة','ورش تطبيقية للمشاريع المشاركة']},
+  ];
+  return (
+    <section id="agenda" className="py-14 bg-white">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">البرنامج</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          {items.map((d,i)=>(
+            <div key={i} className="glass border rounded-2xl p-6">
+              <div className="font-extrabold text-[var(--green)] mb-3">{d.day}</div>
+              <ul className="list-disc pr-6 text-gray-700 space-y-2">
+                {d.sessions.map((s,idx)=>(<li key={idx}>{s}</li>))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========== دليل الرعايات ========== */
+const SPONSOR_TIERS = [
+  {title:'شريك استراتيجي', price:'500,000+ ر.س', perks:[
+    'ذكر في الهوية والمواد الدعائية بصفة الشريك الرئيسي',
+    'خطاب افتتاحي في اليوم الأول',
+    'منصة رئيسية وجناح 6×6 م',
+    'تغطية إعلامية موسّعة وتقرير أثر',
+    '10 بطاقات VIP و20 بطاقة دخول',
+    'شعار على المسرح والوسائط الرقمية',
+  ]},
+  {title:'راعي ماسي', price:'300,000 ر.س', perks:[
+    'شعار بارز في المواد الدعائية والموقع',
+    'جناح 6×6 م',
+    'تغطية إعلامية وتقارير موجزة',
+    '6 بطاقات VIP و12 بطاقة دخول',
+  ]},
+  {title:'ذهبي', price:'150,000 ر.س', perks:[
+    'شعار في المواد الدعائية والموقع',
+    'جناح 4×4 م',
+    '4 بطاقات VIP و8 بطاقات دخول',
+  ]},
+  {title:'فضي', price:'75,000 ر.س', perks:[
+    'شعار في الموقع والمنصة',
+    'جناح 3×3 م',
+    '2 بطاقة VIP و4 بطاقات دخول',
+  ]},
+];
+
+function SponsorGuide(){
+  return (
+    <section id="sponsor-guide" className="py-14 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">دليل الرعايات</h3>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+          {SPONSOR_TIERS.map((t,i)=>(
+            <div key={i} className="border rounded-2xl p-5 bg-white">
+              <div className="text-[var(--green)] font-extrabold text-lg mb-1">{t.title}</div>
+              <div className="text-gray-700 mb-3">القيمة: {t.price}</div>
+              <ul className="text-gray-700 list-disc pr-5 space-y-1">
+                {t.perks.map((p,idx)=>(<li key={idx}>{p}</li>))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-gray-600 mt-6">تُحدّد تفاصيل إضافية في اتفاقية الرعاية (بنود الظهور، التقارير، وبنود الهوية).</p>
+      </div>
+    </section>
+  );
+}
+
+/* ========== بريد عربي منسّق لكل النماذج ========== */
+function mailtoArabic(id, payload, region) {
+  const titles = {sponsor:'رعاية', cfp:'متحدث/مدرّب', register:'تسجيل حضور', expo:'طلب جناح', partner:'شراكة تنفيذية'};
+  const subject = encodeURIComponent(`طلب عبر موقع ملتقى تلبية — ${titles[id]||id} — منطقة ${region.name}`);
+  const lines = [
+    '--- تفاصيل الطلب (Arabic) ---',
+    ...Object.entries(payload).map(([k,v])=>`${k}: ${v}`),
+    '-----------------------------',
+    `المنطقة: ${region.name}`,
+    `التاريخ: ${region.date}`,
+    `المكان: ${region.venue}`,
+    `رابط الصفحة: ${location.href}`
+  ];
+  const body = encodeURIComponent(lines.join('\n'));
+  location.href = `mailto:info@talbiya.sa?subject=${subject}&body=${body}`;
+}
+
+/* ========== النماذج ========== */
+function SponsorForm({region}){
+  return (
+    <section id="sponsor" className="py-14 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">نموذج طلب رعاية</h3>
+        <form className="glass border rounded-2xl p-6 max-w-3xl mx-auto" onSubmit={(e)=>{e.preventDefault();const f=e.target; mailtoArabic('sponsor', {'اسم الجهة': f.org.value,'السجل التجاري/الترخيص': f.cr.value,'الشخص المسؤول': f.contact.value,'البريد': f.email.value,'الجوال': f.phone.value,'باقة الرعاية': f.tier.value,'روابط حسابات': f.links.value,'ملاحظات': f.notes.value}, region);}}>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <input name="org" className="w-full border rounded-xl px-3 py-2" placeholder="اسم الجهة" required />
+            <input name="cr"  className="w-full border rounded-xl px-3 py-2" placeholder="السجل التجاري/الترخيص" />
+            <input name="contact" className="w-full border rounded-xl px-3 py-2" placeholder="الشخص المسؤول" required />
+            <input name="email" type="email" className="w-full border rounded-xl px-3 py-2" placeholder="البريد الإلكتروني" required />
+            <input name="phone" className="w-full border rounded-xl px-3 py-2" placeholder="الجوال" />
+            <select name="tier" className="w-full border rounded-xl px-3 py-2" defaultValue="" required>
+              <option value="" disabled>اختر باقة الرعاية</option>
+              {SPONSOR_TIERS.map((t,i)=>(<option key={i} value={t.title}>{t.title} — {t.price}</option>))}
+            </select>
           </div>
-          <a href="#" class="btn btn-main w-100">شاهد الآن</a>
+          <input name="links" className="w-full border rounded-xl px-3 py-2 mt-3" placeholder="روابط الحسابات (اختياري)" />
+          <textarea name="notes" className="w-full border rounded-xl px-3 py-2 mt-3" rows="4" placeholder="ملاحظات إضافية"></textarea>
+          <button className="w-full mt-4 px-5 py-3 bg-[var(--green)] text-white rounded-xl">إرسال طلب الرعاية</button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function SpeakerCFP({region}){
+  return (
+    <section id="cfp" className="py-14 bg-white">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">تقديم متحدث/مدرّب</h3>
+        <form className="glass border rounded-2xl p-6 max-w-3xl mx-auto" onSubmit={(e)=>{e.preventDefault(); const f=e.target; mailtoArabic('cfp', {'الاسم': f.fullname.value,'الجهة': f.org.value,'البريد': f.email.value,'الجوال': f.phone.value,'المحور': f.topic.value,'نبذة': f.brief.value}, region);}}>
+          <input name="fullname" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="الاسم الكامل" required />
+          <input name="org" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="الجهة (اختياري)" />
+          <input name="email" type="email" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="البريد الإلكتروني" required />
+          <input name="phone" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="الجوال" />
+          <select name="topic" className="w-full border rounded-xl px-3 py-2 mb-3" defaultValue="" required>
+            <option value="" disabled>المحور المقترح</option>
+            <option>الشراكات التنموية</option>
+            <option>الابتكار المجتمعي</option>
+            <option>التطوع والتمكين</option>
+            <option>الاستدامة والمسؤولية الاجتماعية</option>
+          </select>
+          <textarea name="brief" className="w-full border rounded-xl px-3 py-2 mb-3" rows="5" placeholder="نبذة عن المحتوى المقترح" required></textarea>
+          <button className="w-full px-5 py-3 bg-[var(--green)] text-white rounded-xl">إرسال</button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function RegisterExpo({region}){
+  return (
+    <section id="register" className="py-14 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">التسجيل والحجوزات</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <form className="glass border rounded-2xl p-6" onSubmit={(e)=>{e.preventDefault(); const f=e.target; mailtoArabic('register', {'الاسم': f.fullname.value,'البريد': f.email.value,'الجوال': f.phone.value,'الصفة': f.role.value}, region);}}>
+            <div className="font-extrabold text-[var(--green)] mb-3">تسجيل الحضور</div>
+            <input name="fullname" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="الاسم الكامل" required />
+            <input name="email" type="email" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="البريد الإلكتروني" required />
+            <input name="phone" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="الجوال" />
+            <select name="role" className="w-full border rounded-xl px-3 py-2 mb-3" defaultValue="" required>
+              <option value="" disabled>اختر الصفة</option>
+              <option>فرد</option><option>جهة</option><option>متحدث/مدرب</option><option>راعٍ محتمل</option>
+            </select>
+            <button className="w-full px-5 py-3 bg-[var(--green)] text-white rounded-xl">إرسال</button>
+          </form>
+
+          <form className="glass border rounded-2xl p-6" onSubmit={(e)=>{e.preventDefault(); const f=e.target; mailtoArabic('expo', {'اسم الجهة/المبادرة': f.org.value,'نوع العارض': f.exhibitor_type.value,'المساحة المطلوبة': f.size.value,'نبذة': f.brief.value,'مسؤول التواصل': f.contact.value,'البريد': f.email.value,'الجوال': f.phone.value}, region);}}>
+            <div className="font-extrabold text:[var(--green)] mb-3">طلب جناح في المعرض</div>
+            <input name="org" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="اسم الجهة/المبادرة" required />
+            <select name="exhibitor_type" className="w-full border rounded-xl px-3 py-2 mb-3" defaultValue="" required>
+              <option value="" disabled>نوع العارض</option>
+              <option>جهة حكومية</option><option>جهة مانحة</option><option>جامعة</option><option>شركة</option><option>جمعية</option><option>أخرى</option>
+            </select>
+            <select name="size" className="w-full border rounded-xl px-3 py-2 mb-3" defaultValue="" required>
+              <option value="" disabled>المساحة المطلوبة</option>
+              <option>3×3 م</option><option>4×4 م</option><option>6×6 م</option>
+            </select>
+            <textarea name="brief" rows="4" className="w-full border rounded-xl px-3 py-2 mb-3" placeholder="نبذة مختصرة عن المشاركة" required></textarea>
+            <div className="grid sm:grid-cols-3 gap-3">
+              <input name="contact" className="w-full border rounded-xl px-3 py-2" placeholder="مسؤول التواصل" required />
+              <input name="email" type="email" className="w-full border rounded-xl px-3 py-2" placeholder="البريد الإلكتروني" required />
+              <input name="phone" className="w-full border rounded-xl px-3 py-2" placeholder="الجوال" />
+            </div>
+            <button className="w-full mt-4 px-5 py-3 bg-[var(--green)] text-white rounded-xl">إرسال الطلب</button>
+          </form>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>الحقوق القانونية</h5>
-          <p>مع أ. سارة العتيبي</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample2" allowfullscreen></iframe>
+    </section>
+  );
+}
+
+function PartnershipForm({region}){
+  return (
+    <section id="partner" className="py-14 bg-white">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">نموذج شراكة تنفيذية</h3>
+        <p className="text-center text-gray-600 mb-4">للجهات الراغبة بالمشاركة في تنظيم/تمويل/دعم الملتقى قبل التنفيذ.</p>
+        <form className="glass border rounded-2xl p-6 max-w-3xl mx-auto" onSubmit={(e)=>{e.preventDefault(); const f=e.target; mailtoArabic('partner', {'اسم الجهة':f.org.value,'نوع الشراكة':f.ptype.value,'المساهمة المقترحة':f.offer.value,'وسيلة التواصل':f.contact.value,'البريد':f.email.value,'روابط/مرفقات (رابط)':f.links.value,'ملاحظات':f.notes.value}, region);}}>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <input name="org" className="w-full border rounded-xl px-3 py-2" placeholder="اسم الجهة" required />
+            <select name="ptype" className="w-full border rounded-xl px-3 py-2" defaultValue="" required>
+              <option value="" disabled>نوع الشراكة</option>
+              <option>تنظيمية</option><option>تمويلية</option><option>إعلامية</option><option>علمية</option><option>مورد/توريد</option><option>أخرى</option>
+            </select>
           </div>
-          <a href="#" class="btn btn-main w-100">شاهد الآن</a>
+          <textarea name="offer" className="w-full border rounded-xl px-3 py-2 mt-3" rows="3" placeholder="وصف المساهمة المقترحة" required></textarea>
+          <div className="grid sm:grid-cols-2 gap-3 mt-3">
+            <input name="contact" className="w-full border rounded-xl px-3 py-2" placeholder="مسؤول التواصل" required />
+            <input name="email" type="email" className="w-full border rounded-xl px-3 py-2" placeholder="البريد الإلكتروني" required />
+          </div>
+          <input name="links" className="w-full border rounded-xl px-3 py-2 mt-3" placeholder="روابط (مستندات/ملفات) — اختياري" />
+          <textarea name="notes" className="w-full border rounded-xl px-3 py-2 mt-3" rows="3" placeholder="ملاحظات إضافية"></textarea>
+          <button className="w-full mt-4 px-5 py-3 bg-[var(--green)] text-white rounded-xl">إرسال طلب الشراكة</button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function Partners({activeId}){
+  const items = [
+    {name:'إمارة المنطقة', src: EMIRATE_SRC[activeId] || null},
+    {name:'مبادرة تلبية', src: LOGO_TAL},
+    {name:'منصة حصيف', src: LOGO_HAS},
+    {name:'رؤية 2030', src: LOGO_VIS},
+  ];
+  return (
+    <section id="partners" className="py-14 bg-white">
+      <div className="container mx-auto px-4">
+        <h3 className="text-2xl font-bold mb-6 text-center">شركاء الملتقى</h3>
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 items-center">
+          {items.map((it,idx)=>(
+            <div key={idx} className="rounded-xl border p-4 flex items-center justify-center h-24 bg-white">
+              {it.src ? <img src={it.src} alt={it.name} className="max-h-16 object-contain"/> : <span className="text-emerald-700">{it.name}</span>}
+            </div>
+          ))}
         </div>
+        <p className="text-center text-gray-600 mt-6">هل ترغب جهتك أن تكون شريكًا؟ قدّم عبر نموذج الشراكة أدناه.</p>
       </div>
-    </div>
-  </section>
+    </section>
+  );
+}
 
-  <section id="about" class="my-5">
-    <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
-    <p class="bg-white p-3 rounded shadow-sm">
-      بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى مرئي احترافي ونقاشات مع الجهات المعنية والخبراء.
-    </p>
-  </section>
+/* ========== التطبيق ========== */
+function App(){
+  const [regions,setRegions]=React.useState(loadRegions());
+  const [activeId,setActiveId]=React.useState(regions[0]?.id||'riyadh');
+  const active=regions.find(r=>r.id===activeId);
 
-  <section id="stories" class="mt-5">
-    <h2 class="section-title">🌟 قصص المجتمع</h2>
-    <div class="testimonial">
-      <p>“بعد استماعي للبودكاست، بدأت أؤمن أن صوتي له مكان وقيمة.”</p>
-      <small class="text-muted">- مها، جدة</small>
-    </div>
-  </section>
+  React.useEffect(()=>{const param=new URLSearchParams(location.search).get('region');const loaded=loadRegions();setRegions(loaded);const initial=loaded.find(r=>r.id===param)?.id||loaded[0]?.id||'riyadh';setActiveId(initial);document.title='ملتقيات تلبية التعريفية';},[]);
 
-  <section id="resources" class="mt-5">
-    <h2 class="section-title">📚 الموارد والخدمات</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>جهات الدعم</h6>
-          <p>دليل تفاعلي لجهات حكومية وخاصة تقدم خدمات لذوي الإعاقة.</p>
+  React.useEffect(()=>{const r=regions.find(x=>x.id===activeId); if(!r) return; const u=new URL(location.href); u.searchParams.set('region',activeId); u.searchParams.set('venue',slug(r.venue)); if(PRIVATE_MODE) u.searchParams.set('private','1'); history.replaceState({},'',u);},[activeId,regions]);
+
+  return (
+    <main>
+      <header className="bg-white/85 border-b sticky top-0 z-50">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="font-extrabold">ملتقيات تلبية التعريفية</div>
+          {!PRIVATE_MODE && (
+            <div className="flex items-center gap-3">
+              <label className="text-sm text-gray-600">اختر المنطقة:</label>
+              <select value={activeId} onChange={(e)=>setActiveId(e.target.value)} className="rounded-xl border px-3 py-2">
+                {regions.map(r=> <option key={r.id} value={r.id}>{r.name}</option>)}
+              </select>
+            </div>
+          )}
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>أدوات مساعدة</h6>
-          <p>روابط أدوات رقمية مجانية لتحسين الوصول للمحتوى.</p>
+        <Ribbon activeId={activeId} regionName={active?.name||''}/>
+      </header>
+
+      <About/>
+      <RegionCard region={active}/>
+      <Agenda/>
+      <SponsorGuide/>
+      <SponsorForm region={active}/>
+      <SpeakerCFP region={active}/>
+      <RegisterExpo region={active}/>
+      <PartnershipForm region={active}/>
+      <Partners activeId={activeId}/>
+
+      <footer className="bg-gray-100 border-t py-10 mt-6 text-center">
+        <div className="container mx-auto px-4">
+          <p className="text-gray-600 text-sm">© {new Date().getFullYear()} مبادرة تلبية — جميع الحقوق محفوظة</p>
+          <p className="text-gray-600 text-sm mt-1">للتواصل: {PHONE}</p>
+          <div className="mt-3">
+            <a href={PDF_FILE} className="px-4 py-2 rounded-xl border" target="_blank">تحميل ملف ملتقى تلبية — حائل (PDF)</a>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>مبادرات ملهمة</h6>
-          <p>قصص مشاريع ومجتمعات تقود التغيير.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </footer>
+    </main>
+  );
+}
 
-  <section id="contact" class="mt-5">
-    <h2 class="section-title">📬 تواصل معنا</h2>
-    <form class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">الاسم الكامل</label>
-        <input type="text" class="form-control" placeholder="اسمك">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">البريد الإلكتروني</label>
-        <input type="email" class="form-control" placeholder="example@email.com">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">رسالتك</label>
-        <textarea class="form-control" rows="4" placeholder="أخبرنا كيف يمكننا خدمتك أو التعاون معك"></textarea>
-      </div>
-      <button class="btn btn-main w-100">إرسال</button>
-    </form>
-  </section>
-
-  <section class="my-5">
-    <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفاً أو محوراً</h2>
-    <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">اسمك الكامل</label>
-        <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">اسم الضيف المقترح (اختياري)</label>
-        <input type="text" class="form-control" placeholder="مثال: د. عبدالله القحطاني">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">محور أو موضوع تقترحه</label>
-        <textarea class="form-control" rows="3" placeholder="مثل: التوظيف، التعليم، سهولة الوصول..." required></textarea>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">البريد الإلكتروني (اختياري)</label>
-        <input type="email" class="form-control" placeholder="example@email.com">
-      </div>
-      <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
-    </form>
-  </section>
-
-</main>
-
-<footer>
-  <p>© 2025 بودكاست ذوي الإعاقة - </p>
-  <div class="d-flex justify-content-center gap-3 mt-3">
-    <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
-    </a>
-    <a href="https://www.tiktok.com/@podcastpwd?_t=ZS-90sKbbuycTo&_r=1" target="_blank" title="TikTok">
-      <img src="https://cdn-icons-png.flaticon.com/24/3046/3046121.png" alt="TikTok">
-    </a>
-    <a href="https://x.com/podcastpwd?s=11&t=dWAyG2J-XOKhx8AE0ie55A" target="_blank" title="X">
-      <img src="https://cdn-icons-png.flaticon.com/24/5968/5968830.png" alt="X">
-    </a>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- ضمان فتح الصفحة من الأعلى على الجوال عند عدم وجود هاش -->
-<script>
-  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-  window.addEventListener('load', function () {
-    if (!location.hash) { window.scrollTo(0, 0); }
-  });
-  window.addEventListener('pageshow', function () {
-    if (!location.hash) { window.scrollTo(0, 0); }
-  });
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
-
 </body>
 </html>
