@@ -2,7 +2,6 @@
 <html lang="ar" dir="rtl">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-  <style>body { font-family: "Cairo", sans-serif; }</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>بودكاست ذوي الإعاقة</title>
@@ -21,22 +20,15 @@
       color: var(--text-color);
       scroll-behavior: smooth;
     }
-    .navbar {
-      background-color: var(--main-color);
-    }
-    .navbar .nav-link, .navbar-brand {
-      color: #fff !important;
-    }
+    .navbar { background-color: var(--main-color); }
+    .navbar .nav-link, .navbar-brand { color: #fff !important; }
     .hero {
       background: linear-gradient(to left, var(--main-color), var(--dark-color));
       color: white;
       padding: 5rem 1rem;
       text-align: center;
     }
-    .hero img {
-      max-height: 100px;
-      margin-bottom: 1rem;
-    }
+    .hero img { max-height: 100px; margin-bottom: 1rem; }
     .section-title {
       border-right: 5px solid var(--accent-color);
       padding-right: 12px;
@@ -50,47 +42,9 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.05);
       margin-bottom: 1.5rem;
     }
-    .btn-main {
-      background-color: var(--accent-color);
-      color: white;
-    }
-    footer {
-      background-color: var(--text-color);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+    .btn-main { background-color: var(--accent-color); color: white; }
+    footer { background-color: var(--text-color); color: white; text-align: center; padding: 2rem 1rem; }
   </style>
-
-  <style id="patch-inline-style">
-  h1, h2, h3, .section-title, .hero-title { color: #fff !important; }
-  .social i, .social svg { color: #d4af37 !important; fill: #d4af37 !important; }
-  .social a img { filter: invert(61%) sepia(48%) saturate(536%) hue-rotate(6deg) brightness(95%) contrast(98%) !important; }
-  .inline-host-photo { width: 140px; height: auto; border-radius: 12px; margin-inline-start: 12px; vertical-align: middle;
-    border: 1px solid rgba(0,0,0,.08); background:#fff; }
-  </style>
-
-  <style id="unified-font">
-    html, body, input, button, select, textarea {
-      font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', sans-serif !important;
-    }
-  </style>
-
-  <style id="brand-buttons">
-  :root{--main:#714984;--dark:#523663}
-  .btn, .btn-primary, .btn-lg, .btn-sm, a.btn, button {
-    background: linear-gradient(to left,var(--main),var(--dark)) !important;
-    color:#fff !important; border:none !important; 
-    border-radius:12px !important; padding:.625rem 1rem !important;
-    box-shadow: 0 6px 14px rgba(82,54,99,.18);
-  }
-  .btn:hover, .btn-primary:hover, a.btn:hover, button:hover{
-    opacity:.95; transform: translateY(-1px);
-  }
-  </style>
-
-  <style id="home-headings-black">main h2, .section-title{color:#000!important}</style>
-  <style>html{scroll-behavior:smooth}</style>
 </head>
 <body>
 
@@ -101,19 +55,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
-  <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
-  <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
-  <!-- جديد: الإحصائيات قبل الارتباط برؤية 2030 -->
-  <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a href="#about" class="nav-link">من نحن</a></li>
+        <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
+        <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
+        <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
         <li class="nav-item"><a class="nav-link" href="documents.html">الوثائق والمراجع</a></li>
-  <li class="nav-item"><a href="vision2030.html" class="nav-link">الارتباط برؤية 2030</a></li>
-  <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
-  <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
-</ul>
-
+        <li class="nav-item"><a href="vision2030.html" class="nav-link">الارتباط برؤية 2030</a></li>
+        <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -128,7 +79,8 @@
 <main class="container py-5">
 
   <section id="episodes">
-    <h2 class="section-title">🎧 الحلقات</h2>
+    <h2 class="section-title">🎧 الحلقات <span style="font-size:0.7em; color:#666; font-weight:normal;">(نموذج تجريبي)</span></h2>
+    <p style="font-size:0.85em; color:#777; margin-top:-10px; margin-bottom:20px;">*جميع الروابط أدناه أمثلة تجريبية لأغراض العرض فقط*</p>
     <div class="row g-4">
       <div class="col-md-6">
         <div class="episode-card">
@@ -153,116 +105,12 @@
     </div>
   </section>
 
-  <section id="about" class="my-5">
-    <h2 class="h4 text-[#523663] mb-3">📖 من نحن</h2>
-    <p class="bg-white p-3 rounded shadow-sm">
-      بودكاست ذوي الإعاقة هو مشروع إعلامي توعوي يعزز الوعي المجتمعي والتواصل الفعال حول قضايا وتمكين الأشخاص ذوي الإعاقة، من خلال محتوى مرئي احترافي ونقاشات مع الجهات المعنية والخبراء.
-    </p>
-  </section>
-
-  <section id="stories" class="mt-5">
-    <h2 class="section-title">🌟 قصص المجتمع</h2>
-    <div class="testimonial">
-      <p>“بعد استماعي للبودكاست، بدأت أؤمن أن صوتي له مكان وقيمة.”</p>
-      <small class="text-muted">- مها، جدة</small>
-    </div>
-  </section>
-
-  <section id="resources" class="mt-5">
-    <h2 class="section-title">📚 الموارد والخدمات</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>جهات الدعم</h6>
-          <p>دليل تفاعلي لجهات حكومية وخاصة تقدم خدمات لذوي الإعاقة.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>أدوات مساعدة</h6>
-          <p>روابط أدوات رقمية مجانية لتحسين الوصول للمحتوى.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="feature-box">
-          <h6>مبادرات ملهمة</h6>
-          <p>قصص مشاريع ومجتمعات تقود التغيير.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="mt-5">
-    <h2 class="section-title">📬 تواصل معنا</h2>
-    <form class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">الاسم الكامل</label>
-        <input type="text" class="form-control" placeholder="اسمك">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">البريد الإلكتروني</label>
-        <input type="email" class="form-control" placeholder="example@email.com">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">رسالتك</label>
-        <textarea class="form-control" rows="4" placeholder="أخبرنا كيف يمكننا خدمتك أو التعاون معك"></textarea>
-      </div>
-      <button class="btn btn-main w-100">إرسال</button>
-    </form>
-  </section>
-
-  <section class="my-5">
-    <h2 class="h4 text-[#523663] mb-3">💡 اقترح ضيفاً أو محوراً</h2>
-    <form action="thankyou.html" method="get" class="bg-white p-4 rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">اسمك الكامل</label>
-        <input type="text" class="form-control" placeholder="مثال: نورة العبدالله" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">اسم الضيف المقترح (اختياري)</label>
-        <input type="text" class="form-control" placeholder="مثال: د. عبدالله القحطاني">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">محور أو موضوع تقترحه</label>
-        <textarea class="form-control" rows="3" placeholder="مثل: التوظيف، التعليم، سهولة الوصول..." required></textarea>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">البريد الإلكتروني (اختياري)</label>
-        <input type="email" class="form-control" placeholder="example@email.com">
-      </div>
-      <button class="btn w-100" style="background-color:#714984; color:white;">إرسال الاقتراح</button>
-    </form>
-  </section>
-
 </main>
 
 <footer>
-  <p>© 2025 بودكاست ذوي الإعاقة - </p>
-  <div class="d-flex justify-content-center gap-3 mt-3">
-    <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
-      <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
-    </a>
-    <a href="https://www.tiktok.com/@podcastpwd?_t=ZS-90sKbbuycTo&_r=1" target="_blank" title="TikTok">
-      <img src="https://cdn-icons-png.flaticon.com/24/3046/3046121.png" alt="TikTok">
-    </a>
-    <a href="https://x.com/podcastpwd?s=11&t=dWAyG2J-XOKhx8AE0ie55A" target="_blank" title="X">
-      <img src="https://cdn-icons-png.flaticon.com/24/5968/5968830.png" alt="X">
-    </a>
-  </div>
+  <p>© 2025 بودكاست ذوي الإعاقة</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- ضمان فتح الصفحة من الأعلى على الجوال عند عدم وجود هاش -->
-<script>
-  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-  window.addEventListener('load', function () {
-    if (!location.hash) { window.scrollTo(0, 0); }
-  });
-  window.addEventListener('pageshow', function () {
-    if (!location.hash) { window.scrollTo(0, 0); }
-  });
-</script>
-
 </body>
 </html>
