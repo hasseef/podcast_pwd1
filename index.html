@@ -20,15 +20,22 @@
       color: var(--text-color);
       scroll-behavior: smooth;
     }
-    .navbar { background-color: var(--main-color); }
-    .navbar .nav-link, .navbar-brand { color: #fff !important; }
+    .navbar {
+      background-color: var(--main-color);
+    }
+    .navbar .nav-link, .navbar-brand {
+      color: #fff !important;
+    }
     .hero {
       background: linear-gradient(to left, var(--main-color), var(--dark-color));
       color: white;
       padding: 5rem 1rem;
       text-align: center;
     }
-    .hero img { max-height: 100px; margin-bottom: 1rem; }
+    .hero img {
+      max-height: 100px;
+      margin-bottom: 1rem;
+    }
     .section-title {
       border-right: 5px solid var(--accent-color);
       padding-right: 12px;
@@ -42,8 +49,16 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.05);
       margin-bottom: 1.5rem;
     }
-    .btn-main { background-color: var(--accent-color); color: white; }
-    footer { background-color: var(--text-color); color: white; text-align: center; padding: 2rem 1rem; }
+    .btn-main {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    footer {
+      background-color: var(--text-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
   </style>
 </head>
 <body>
@@ -81,34 +96,23 @@
   <section id="episodes">
     <h2 class="section-title">🎧 الحلقات <span style="font-size:0.7em; color:#666; font-weight:normal;">(نموذج تجريبي)</span></h2>
     <p style="font-size:0.85em; color:#777; margin-top:-10px; margin-bottom:20px;">*جميع الروابط أدناه أمثلة تجريبية لأغراض العرض فقط*</p>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>التعليم الشامل</h5>
-          <p>مع د. محمد القحطاني</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample1" allowfullscreen></iframe>
-          </div>
-          <a href="#" class="btn btn-main w-100">شاهد الآن</a>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="episode-card">
-          <h5>الحقوق القانونية</h5>
-          <p>مع أ. سارة العتيبي</p>
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe src="https://www.youtube.com/embed/sample2" allowfullscreen></iframe>
-          </div>
-          <a href="#" class="btn btn-main w-100">شاهد الآن</a>
-        </div>
-      </div>
-    </div>
   </section>
 
 </main>
 
 <footer>
-  <p>© 2025 بودكاست ذوي الإعاقة</p>
+  <p>© 2025 بودكاست ذوي الإعاقة - </p>
+  <div class="d-flex justify-content-center gap-3 mt-3">
+    <a href="https://www.instagram.com/podcastpwd?igsh=NDJ5YjR1dno2cGQ0" target="_blank" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.tiktok.com/@podcastpwd?_t=ZS-90sKbbuycTo&_r=1" target="_blank" title="TikTok">
+      <img src="https://cdn-icons-png.flaticon.com/24/3046/3046121.png" alt="TikTok">
+    </a>
+    <a href="https://x.com/podcastpwd?s=11&t=dWAyG2J-XOKhx8AE0ie55A" target="_blank" title="X">
+      <img src="https://cdn-icons-png.flaticon.com/24/5968/5968830.png" alt="X">
+    </a>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
