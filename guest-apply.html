@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>كن ضيفًا معنا | بودكاست ذوي الإعاقة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <style>
+    :root{--main-color:#714984;--dark-color:#523663;--accent-color:#bc9c5b;--text-color:#3f3a3f;--bg-color:#f4f4f4}
+    *{box-sizing:border-box}
+    body{font-family:'Cairo',system-ui,-apple-system,'Segoe UI','Noto Sans Arabic',sans-serif;background:var(--bg-color);color:var(--text-color)}
+    html{scroll-behavior:smooth}
+    .navbar{background:var(--main-color)}
+    .navbar .nav-link,.navbar-brand{color:#fff!important}
+    .hero{background:linear-gradient(to left,var(--main-color),var(--dark-color));color:#fff;padding:3.5rem 1rem;text-align:center}
+    .section-title{border-right:5px solid var(--accent-color);padding-right:12px;font-weight:700;margin-bottom:1.25rem;color:#000}
+    .card-like{background:#fff;border-radius:16px;padding:1.25rem;box-shadow:0 0 10px rgba(0,0,0,.06)}
+    .btn-main{background:linear-gradient(to left,var(--main-color),var(--dark-color));color:#fff;border:none;border-radius:12px;padding:.7rem 1rem;box-shadow:0 6px 14px rgba(82,54,99,.18)}
+    .btn-main:hover{opacity:.95;transform:translateY(-1px)}
+    .req:after{content:' *';color:#d33;font-weight:700}
+    footer{background:#3f3a3f;color:#fff;text-align:center;padding:2rem 1rem;margin-top:2rem}
+    .hint{font-size:.9rem;color:#666}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">بودكاست ذوي الإعاقة</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a href="index.html#about" class="nav-link">من نحن</a></li>
+          <li class="nav-item"><a href="team.html" class="nav-link">فريق العمل</a></li>
+          <li class="nav-item"><a href="partners-logos.html" class="nav-link">شركاؤنا</a></li>
+          <li class="nav-item"><a href="statistics.html" class="nav-link">الإحصائيات</a></li>
+          <li class="nav-item"><a href="documents.html" class="nav-link">الوثائق والمراجع</a></li>
+          <li class="nav-item"><a href="vision2030.html" class="nav-link">الارتباط برؤية 2030</a></li>
+          <li class="nav-item"><a href="sponsorships.html" class="nav-link">فرص الرعاية</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">تواصل معنا</a></li>
+          <li class="nav-item"><a href="guest-apply.html" class="nav-link fw-semibold">كن ضيفًا معنا</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-6 fw-bold">🎙️ كن ضيفًا معنا</h1>
+      <p class="lead mb-0">شارك خبرتك أو تجربتك الملهمة في بودكاست <strong>ذوي الإعاقة</strong> — عبّئ النموذج التالي وسيقوم فريقنا بمراجعة طلبك وترشيح الحلقة الأنسب.</p>
+    </div>
+  </section>
+
+  <main class="container py-5">
+    <section>
+      <h2 class="section-title">بيانات المتقدم</h2>
+      <form id="guestForm" class="card-like" method="post" action="#">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label req">الاسم الكامل</label>
+            <input type="text" name="full_name" class="form-control" required placeholder="مثال: د. محمد بن علي القحطاني">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">الصفة أو المسمى المهني</label>
+            <input type="text" name="title" class="form-control" placeholder="أستاذ/استشاري/مؤسس مبادرة…">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">جهة العمل / المؤسسة</label>
+            <input type="text" name="org" class="form-control" placeholder="مثال: جامعة الملك سعود">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label req">البريد الإلكتروني للتواصل</label>
+            <input type="email" name="email" class="form-control" required placeholder="name@email.com">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">رقم الجوال (اختياري)</label>
+            <input type="tel" name="phone" class="form-control" pattern="^[0-9+\-\s]{8,}$" placeholder="05xxxxxxxx">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label req">التخصص / المجال</label>
+            <input type="text" name="expertise" class="form-control" required placeholder="التربية الخاصة، القانون، التقنيات المساعدة…">
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <h2 class="section-title">اختيار الحلقة</h2>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label req">اختر الحلقة المناسبة لك</label>
+            <select id="episodeSelect" name="episode_choice" class="form-select" required>
+              <option value="">اختر من حلقات الموسم</option>
+              <option>التعليم الدامج</option>
+              <option>التوظيف والتمكين المهني</option>
+              <option>التقنيات المساعدة والوصول الرقمي</option>
+              <option>الحقوق والقوانين</option>
+              <option>الصحة والتأهيل</option>
+              <option value="other">أخرى (اقتراح حلقة جديدة)</option>
+            </select>
+            <div class="hint mt-1">يمكنك اختيار "أخرى" لاقتراح حلقة جديدة بالكامل.</div>
+          </div>
+          <div class="col-md-6" id="customEpisodeWrap" style="display:none;">
+            <label class="form-label req">عنوان الحلقة المقترحة</label>
+            <input type="text" name="custom_episode_title" class="form-control" placeholder="اكتب عنوانًا دقيقًا">
+          </div>
+          <div class="col-12" id="customTopicsWrap" style="display:none;">
+            <label class="form-label">المحاور المقترحة</label>
+            <textarea name="custom_episode_topics" class="form-control" rows="3" placeholder="نقاط/محاور رئيسية مختصرة"></textarea>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <label class="form-label req">لماذا ترى نفسك مناسبًا لهذه الحلقة؟</label>
+            <textarea name="fit_reason" class="form-control" rows="3" required placeholder="خبرتك/منشوراتك/أعمالك ذات الصلة"></textarea>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label req">المحاور التي ترغب بالحديث عنها</label>
+            <textarea name="desired_topics" class="form-control" rows="3" required placeholder="٣–٥ محاور مركّزة"></textarea>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <label class="form-label">رابط السيرة/الحساب المهني (اختياري)</label>
+            <input type="url" name="profile_url" class="form-control" placeholder="https://…">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">مرفق سيرة PDF (اختياري)</label>
+            <input type="file" name="cv_pdf" class="form-control" accept="application/pdf">
+          </div>
+        </div>
+
+        <div class="form-check mt-3">
+          <input class="form-check-input" type="checkbox" id="agree" required>
+          <label class="form-check-label" for="agree">أقرّ بصحة البيانات وأوافق على التواصل معي من قبل إدارة البودكاست.</label>
+        </div>
+
+        <div class="d-grid mt-4">
+          <button class="btn btn-main btn-lg" type="submit">إرسال الطلب</button>
+        </div>
+        <p class="hint mt-3">🔒 تُستخدم البيانات لأغراض الترشيح والتواصل فقط، ولن تُشارك مع أي طرف ثالث.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 بودكاست ذوي الإعاقة</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // إظهار/إخفاء حقول اقتراح حلقة جديدة
+    const episodeSelect = document.getElementById('episodeSelect');
+    const customEpisodeWrap = document.getElementById('customEpisodeWrap');
+    const customTopicsWrap = document.getElementById('customTopicsWrap');
+    episodeSelect.addEventListener('change', function(){
+      const other = this.value === 'other';
+      customEpisodeWrap.style.display = other ? 'block' : 'none';
+      customTopicsWrap.style.display = other ? 'block' : 'none';
+      customEpisodeWrap.querySelector('input').required = other;
+    });
+
+    // منع الإرسال الافتراضي مؤقتًا (يمكن ربطه بخدمة خارجية لاحقًا)
+    document.getElementById('guestForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('شكراً لك! تم استلام طلبك وسيتم التواصل معك بعد المراجعة.');
+      this.reset();
+      customEpisodeWrap.style.display = 'none';
+      customTopicsWrap.style.display = 'none';
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>
