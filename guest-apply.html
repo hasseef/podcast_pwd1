@@ -1,1 +1,81 @@
-<!DOCTYPE html><html lang='ar' dir='rtl'><head><meta charset='utf-8'><title>شارك بخبرتك | بودكاست ذوي الإعاقة</title></head><body><h1>🎙️ شارك بخبرتك</h1></body></html>
+<form id="guestForm" class="card-like" method="POST" action="https://formsubmit.co/podcastpwd@talbiya.sa">
+  <input type="hidden" name="_next" value="thankyou.html">
+  <input type="hidden" name="_subject" value="طلب مشاركة ضيف - بودكاست ذوي الإعاقة">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <!-- حقول أساسية -->
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">الاسم الكامل</label>
+      <input type="text" name="full_name" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">البريد الإلكتروني</label>
+      <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">التخصص / المجال</label>
+      <input type="text" name="expertise" class="form-control" required>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <!-- اختيار الحلقة -->
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">اختر الحلقة المناسبة لك</label>
+      <select id="episodeSelect" name="episode_choice" class="form-select" required>
+        <option value="">اختر من حلقات الموسم</option>
+        <option>التعليم الدامج</option>
+        <option>التوظيف والتمكين المهني</option>
+        <option>التقنيات المساعدة والوصول الرقمي</option>
+        <option>الحقوق والقوانين</option>
+        <option>الصحة والتأهيل</option>
+        <option value="other">أخرى (اقتراح حلقة جديدة)</option>
+      </select>
+    </div>
+
+    <div class="col-md-6" id="customEpisodeWrap" style="display:none;">
+      <label class="form-label">عنوان الحلقة المقترحة</label>
+      <input type="text" name="custom_episode_title" class="form-control">
+    </div>
+
+    <div class="col-12" id="customTopicsWrap" style="display:none;">
+      <label class="form-label">المحاور المقترحة</label>
+      <textarea name="custom_episode_topics" class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- سبب الملاءمة + محاور الحديث -->
+  <div class="row g-3 mt-1">
+    <div class="col-md-6">
+      <label class="form-label">لماذا ترى نفسك مناسبًا لهذه الحلقة؟</label>
+      <textarea name="fit_reason" class="form-control" rows="3" required></textarea>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">المحاور التي ترغب بالحديث عنها</label>
+      <textarea name="desired_topics" class="form-control" rows="3" required></textarea>
+    </div>
+  </div>
+
+  <div class="d-grid mt-4">
+    <button class="btn btn-main btn-lg" type="submit">إرسال الطلب</button>
+  </div>
+</form>
+
+<script>
+  const sel = document.getElementById('episodeSelect');
+  const wrap1 = document.getElementById('customEpisodeWrap');
+  const wrap2 = document.getElementById('customTopicsWrap');
+  if (sel) {
+    sel.addEventListener('change', function(){
+      const other = this.value === 'other';
+      wrap1.style.display = other ? 'block' : 'none';
+      wrap2.style.display = other ? 'block' : 'none';
+      const input = wrap1.querySelector('input');
+      if (input) input.required = other;
+    });
+  }
+</script>
